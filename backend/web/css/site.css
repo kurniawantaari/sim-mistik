@@ -8,8 +8,40 @@ body {
     margin: 0 auto -60px;
     padding: 0 0 60px;
 }
-.card.bgred{
-    background-color: #f16b4e;
+.card.bggrey{
+ background-color: #bdbdbd ;
+/*color: white;*/
+}
+
+.card.bggrey hr{
+/*border-color: white;*/
+}
+.card.bglightred{
+ /*background-color: #f8bbd0;*/
+  background-color: #b71c1c;
+  color  :white;
+}
+
+.card.bglightred hr{
+border-color: #ffcdd2;
+}
+.card.bglightgreen{
+ /*background-color: #ccff90;*/
+ background-color: #1b5e20;
+ color: white;
+}
+
+.card.bglightgreen hr{
+border-color: #a5d6a7;
+}
+.card.bglightyellow{
+ /*background-color: #ffd54f;*/
+ background-color: #ffd600;
+ /*background-color: #1b5e20;*/
+}
+
+.card.bglightyellow hr{
+border-color: #f9a825;
 }
 .teal{
     background-color: #00a65a;
