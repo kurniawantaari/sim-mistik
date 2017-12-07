@@ -11,6 +11,12 @@ html {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif; }
 
+li#no-mark::before {
+       content:  " ";
+}
+td span{
+    padding:0px 2px;
+}
 hr {
   max-width: 70px;
   border-width: 3px;
@@ -45,9 +51,11 @@ p {
 
 .text-faded {
   color: rgba(255, 255, 255, 0.7); }
-
+.breadcrumb{
+   margin-bottom: 0px;
+}
 section {
-  padding: 20px; }
+  padding: 0px 15px 5px; }
 
 aside section{
   padding: 10px 0px 5px 0px; }

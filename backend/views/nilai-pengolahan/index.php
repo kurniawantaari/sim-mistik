@@ -29,6 +29,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 'idmitra0.nama',
                  'idkegiatan0.nama',
                  'idkegiatan0.tahun',
+                   [
+                    'attribute' => 'sudah_dinilai',
+                    'format' => 'raw',
+                    'options' => [
+                        'width' => '80px',
+                    ],
+                    'value' => function ($data) {
+                        if ($data->sudah_dinilai == TRUE)
+                            return "<span class='label label-danger'>" . 'Sudah' . "</span>";
+                        else
+                            return "<span class='label label-success'>" . 'Belum' . "</span>";
+                    }
+                ], 
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'template' => '{update}',

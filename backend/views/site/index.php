@@ -14,11 +14,11 @@ $this->title = 'SIM-MISTIK';
             </div>
         </div>
     </header>
-    <section id="about" class="bg-green">
+    <section id="about" class="bg-green section-heading">
 
         <div class="row">
             <div class="col-lg-12 text-center green">
-                <h2 class="section-heading">Sistem Informasi Manajemen Mitra Statistik</h2>
+                <h2>Sistem Informasi Manajemen Mitra Statistik</h2>
                 <hr class="light">
                 <p class="white-text">Sistem Informasi yang digunakan sebagai rekomendasi dan bahan evaluasi kinerja mitra statistik Badan Pusat Statistik Kabupaten Hulu Sungai Utara.</p>
 

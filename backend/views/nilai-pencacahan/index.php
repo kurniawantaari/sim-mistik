@@ -26,27 +26,59 @@ $this->params['breadcrumbs'][] = $this->title;
 
         echo GridView::widget([
             'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
+         //   'filterModel' => $searchModel,
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
                 'idmitra0.nik',
                 'idmitra0.nama',
                 'idkegiatan0.nama',
-                 'idkegiatan0.tahun',
+                'idkegiatan0.tahun',
+                    [
+                    'attribute' => 'sudah_dinilai',
+                    'format' => 'raw',
+                    'options' => [
+                        'width' => '80px',
+                    ],
+                    'value' => function ($data) {
+                        if ($data->sudah_dinilai == TRUE)
+                            return "<span class='label label-danger'>" . 'Sudah' . "</span>";
+                        else
+                            return "<span class='label label-success'>" . 'Belum' . "</span>";
+                    }
+                ],    [
+                    'attribute' => 'sudah_dinilai_pengolahan',
+                    'format' => 'raw',
+                    'options' => [
+                        'width' => '80px',
+                    ],
+                    'value' => function ($data) {
+                        if ($data->sudah_dinilai_pengolahan == TRUE)
+                            return "<span class='label label-danger'>" . 'Sudah' . "</span>";
+                        else
+                            return "<span class='label label-success'>" . 'Belum' . "</span>";
+                    }
+                ],
                 [
-            'class' => 'yii\grid\ActionColumn',
-            'template' => '{update}',
-            'buttons' => [
-                'update' => function ($url) {
-                    return Html::a(
-                                    '<span class="glyphicon glyphicon-edit"></span>', $url, [
-                                'title' => 'Beri nilai',
-                                'data-pjax' => '0',
-                                    ]
-                    );
-                },
-            ],
-        ],
+                    'class' => 'yii\grid\ActionColumn',
+                    'template' => '{nilaipencacahan}   {nilaipengolahan}',
+                    'buttons' => ['nilaipencacahan' => function ($url) {
+                            return Html::a(
+                                            '<span class="fa fa-pencil"></span>', $url, [
+                                        'title' => 'Beri Nilai Pencacahan',
+                                        'data-pjax' => '0',
+                                            ]
+                            );
+                        },
+                        'nilaipengolahan' => function ($url) {
+                            return Html::a(
+                                            '<span class="fa fa-tv"></span>', $url, [
+                                        'title' => 'Beri Nilai Pengolahan',
+                                        'data-pjax' => '0',
+                                            ]
+                            );
+                        },
+                    ],
+                ],
             ],
         ]);
 

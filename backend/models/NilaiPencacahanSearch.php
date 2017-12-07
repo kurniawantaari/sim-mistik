@@ -19,7 +19,7 @@ class NilaiPencacahanSearch extends NilaiPencacahan
     {
         return [
             [['id', 'idmitra', 'idkegiatan', 'konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'persen_error', 'pascakomputerisasi', 'r_nilai'], 'integer'],
-            [['sop1', 'sop2', 'sop3', 'sop4', 'sop5','sudah_dinilai'], 'boolean'],
+            [['sop1', 'sop2', 'sop3', 'sop4', 'sop5','sudah_dinilai','sudah_dinilai_pengolahan'], 'boolean'],
         ];
     }
 
@@ -77,7 +77,8 @@ class NilaiPencacahanSearch extends NilaiPencacahan
             'persen_error' => $this->persen_error,
             'pascakomputerisasi' => $this->pascakomputerisasi,
             'r_nilai' => $this->r_nilai,
-            'sudah_dinilai'=>FALSE,
+//            'sudah_dinilai'=>FALSE,
+//            'sudah_dinilai_pengolahan'=>FALSE,
         ]);
 
         return $dataProvider;

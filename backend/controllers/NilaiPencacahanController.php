@@ -36,7 +36,11 @@ class NilaiPencacahanController extends Controller {
     public function actionIndex() {
         $searchModel = new NilaiPencacahanSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        //$dataProvider->query->where(['sudah_dinilai' => false]);
+        //perlu ditambahkan rule jika pengguna adalah admin, maka muncul full.
+        //jika subject matter pencacahan maka sudah dinilainya saja yang false
+        //jika subject matter pengolahan maka sudah dinilai pengolahannya saja yang false
+
+        $dataProvider->query->where(['sudah_dinilai' => false])->orWhere(['sudah_dinilai_pengolahan' => false]);
 
         return $this->render('index', [
                     'searchModel' => $searchModel,
@@ -72,13 +76,7 @@ class NilaiPencacahanController extends Controller {
         }
     }
 
-    /**
-     * Updates an existing NilaiPencacahan model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdate($id) {
+    public function actionNilaipencacahan($id) {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
@@ -102,17 +100,21 @@ class NilaiPencacahanController extends Controller {
                 $count_true++;
             }
             $model->sop = $count_true * 2;
-            //hitung rata-rata nilai
-            $model->r_nilai = round((
-                    $model->konsep + $model->isian + $model->tulisan + $model->waktu + $model->kerjasama + $model->koordinasi + $model->pascakomputerisasi + $model->sop
-                    ) / 8);
+
             $model->sudah_dinilai = TRUE;
-            if ($model->save()) {
-                //   update nilai total dan kategorinya
+            $model->save();
+
+            if ($model->sudah_dinilai && $model->sudah_dinilai_pengolahan) {
+                //hitung rata-rata nilai
+                $model->r_nilai = round((
+                        $model->konsep + $model->isian + $model->tulisan + $model->waktu + $model->kerjasama + $model->koordinasi + $model->pascakomputerisasi + $model->sop
+                        ) / 8);
+                $model->save();
+//   update nilai total dan kategorinya
                 $mitraModel = $this->findMitraModel($idmitra);
                 $mitraModel->nilai = (int)
-                                NilaiPencacahan::find()->where(['idmitra'=>$idmitra])
-                                ->average('r_nilai');//
+                                NilaiPencacahan::find()->where(['idmitra' => $idmitra])
+                                ->average('r_nilai'); //
                 if ($mitraModel->nilai > 8) {
                     $mitraModel->kategori_nilai = "diprioritaskan";
                 } else
@@ -125,41 +127,74 @@ class NilaiPencacahanController extends Controller {
                     Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
                     return $this->redirect(['index']);
                 } else {
-                    return $this->render('update', [
+                    return $this->render('nilaipencacahan', [
                                 'model' => $model,
                     ]);
                 }
             } else {
-                return $this->render('update', [
-                            'model' => $model,
-                ]);
+                Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
+                    return $this->redirect(['index']);
             }
         } else {
-            return $this->render('update', [
+            return $this->render('nilaipencacahan', [
                         'model' => $model,
             ]);
         }
     }
 
-//             
-//                //update nilai total dan kategorinya
-//             
-//
-//             
-//              
-//                   
-//                } else {
-//                    return $this->render('update', [
-//                                'model' => $model,
-//                    ]);
-//                }
-//            } else {
-//                return $this->render('update', [
-//                            'model' => $model,
-//                ]);
-//            }
-//        }
-//    }
+    /**
+     * Updates an existing NilaiPencacahan model.
+     * Hanya update apakah sudah dilakukan penilaian pascakomputerisasi
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionNilaipengolahan($id) {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post())) {
+            $idmitra = (int) $model->idmitra;
+
+            $model->sudah_dinilai_pengolahan = TRUE;
+            $model->save();
+
+            if ($model->sudah_dinilai && $model->sudah_dinilai_pengolahan) {
+                //hitung nilai rata-rata  
+                $model->r_nilai = round((
+                        $model->konsep + $model->isian + $model->tulisan + $model->waktu + $model->kerjasama + $model->koordinasi + $model->pascakomputerisasi + $model->sop
+                        ) / 8);
+                $model->save();
+                //   update nilai total dan kategorinya
+                $mitraModel = $this->findMitraModel($idmitra);
+                $mitraModel->nilai = (int)
+                                NilaiPencacahan::find()->where(['idmitra' => $idmitra])
+                                ->average('r_nilai'); //
+                if ($mitraModel->nilai > 8) {
+                    $mitraModel->kategori_nilai = "diprioritaskan";
+                } else
+                if ($mitraModel->nilai >= 6) {
+                    $mitraModel->kategori_nilai = "dipertimbangkan";
+                } else {
+                    $mitraModel->kategori_nilai = "perlu pembinaan";
+                }
+                if ($mitraModel->save()) {
+                    Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
+                    return $this->redirect(['index']);
+                } else {
+                    return $this->render('nilaipengolahan', [
+                                'model' => $model,
+                    ]);
+                }
+            } else {
+                Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
+                    return $this->redirect(['index']);
+            }
+        } else {
+            return $this->render('nilaipengolahan', [
+                        'model' => $model,
+            ]);
+        }
+    }
 
     /**
      * Deletes an existing NilaiPencacahan model.

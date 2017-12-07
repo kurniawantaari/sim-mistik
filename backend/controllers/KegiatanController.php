@@ -203,7 +203,32 @@ class KegiatanController extends Controller {
 
         return $this->redirect(['index']);
     }
+  public function actionKegiatanlanjut($id) {
 
+        //pilih mitra yang mengikuti kegiatan
+        //=pilih idmitra where idkegiatan=$id dari tabel nilai pencacahan 
+        //$result=['idmitra=>[4,8]] //example result
+        $resultPencacahan = ArrayHelper::toArray(
+                        NilaiPencacahan::find()->select('idmitra')->where(['idkegiatan' => (int) $id])->all()
+        );
+        $resultPengolahan = ArrayHelper::toArray(
+                        NilaiPengolahan::find()->select('idmitra')->where(['idkegiatan' => (int) $id])->all()
+        );
+        // $ids = [4,8];//example result
+        $idsPencacahan = ArrayHelper::getColumn($resultPencacahan, 'idmitra');
+        $idsPengolahan = ArrayHelper::getColumn($resultPengolahan, 'idmitra');
+
+        /* Update mitra_pencacahan SET sedang_survei = TRUE WHERE id in idmitra_dari tabel nilai pencacahan */
+        //jika berhasil tampilkan notif sukses
+        MitraPencacahan::updateAll(['sedang_survei' => TRUE], ['in', 'id', $idsPencacahan]);
+        MitraPengolahan::updateAll(['sedang_survei' => TRUE], ['in', 'id', $idsPengolahan]);
+       
+ \Yii::$app->getSession()->setFlash('success', 'Kegiatan telah dilanjutkan kembali.');
+ 
+
+        return $this->redirect(['index']);
+        
+    }
     /**
      * Deletes an existing Kegiatan model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

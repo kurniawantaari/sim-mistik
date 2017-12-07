@@ -28,6 +28,7 @@ use yii\behaviors\BlameableBehavior;
  * @property integer $pascakomputerisasi
  * @property integer $r_nilai
  * @property boolean $sudah_dinilai
+ * @property boolean $sudah_dinilai_pengolahan
  * @property integer $created_at
  * @property integer $created_by
  * @property integer $updated_at
@@ -36,14 +37,14 @@ use yii\behaviors\BlameableBehavior;
  * @property Kegiatan $idkegiatan0
  * @property MitraPencacahan $idmitra0
  */
-class NilaiPencacahan extends \yii\db\ActiveRecord
-{
+class NilaiPencacahan extends \yii\db\ActiveRecord {
+
     public $daftarIDmitra;
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'nilai_pencacahan';
     }
 
@@ -54,20 +55,19 @@ class NilaiPencacahan extends \yii\db\ActiveRecord
         return [
             TimestampBehavior::className(),
             BlameableBehavior::className(),
-            
         ];
     }
+
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-              [['idmitra', 'idkegiatan','sudah_dinilai','created_at', 'updated_at', 'created_by','updated_by'], 'required'],
-                        [['idmitra', 'idkegiatan', 'konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'persen_error', 'pascakomputerisasi', 'r_nilai'], 'integer'],
-            [['sop1', 'sop2', 'sop3', 'sop4', 'sop5','sudah_dinilai'], 'boolean'],
-              [[ 'konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'pascakomputerisasi', 'r_nilai'], 'compare', 'compareValue' => 0, 'operator' => '>=', 'type' => 'number'],
-              [[ 'konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'pascakomputerisasi', 'r_nilai'], 'compare', 'compareValue' => 10, 'operator' => '<=', 'type' => 'number'],    
+            [['idmitra', 'idkegiatan', 'sudah_dinilai', 'sudah_dinilai_pengolahan','created_at', 'updated_at', 'created_by', 'updated_by'], 'required'],
+            [['idmitra', 'idkegiatan', 'konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'persen_error', 'pascakomputerisasi', 'r_nilai'], 'integer'],
+            [['sop1', 'sop2', 'sop3', 'sop4', 'sop5', 'sudah_dinilai_pengolahan','sudah_dinilai'], 'boolean'],
+            //[['konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'pascakomputerisasi', 'r_nilai'], 'min'=>0, 'max' => 10],
+   [['konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'pascakomputerisasi', 'r_nilai'], 'compare', 'compareValue' => 10, 'operator' => '<=', 'type' => 'number'],
             [['idkegiatan'], 'exist', 'skipOnError' => true, 'targetClass' => Kegiatan::className(), 'targetAttribute' => ['idkegiatan' => 'id']],
             [['idmitra'], 'exist', 'skipOnError' => true, 'targetClass' => MitraPencacahan::className(), 'targetAttribute' => ['idmitra' => 'id']],
         ];
@@ -76,8 +76,7 @@ class NilaiPencacahan extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => Yii::t('app', 'ID'),
             'idmitra' => Yii::t('app', 'ID mitra'),
@@ -97,27 +96,27 @@ class NilaiPencacahan extends \yii\db\ActiveRecord
             'persen_error' => Yii::t('app', 'Persentase error berdasarkan hasil editing coding dan entry'),
             'pascakomputerisasi' => Yii::t('app', 'Nilai pascakomputerisasi'),
             'r_nilai' => Yii::t('app', 'Rata-rata Nilai'),
-            'sudah_dinilai'=>Yii::t('app','Apakah sudah dinilai?'), 
-            'created_by'=> Yii::t('app','Dibuat oleh'),
-            'created_at'=> Yii::t('app','Dibuat pada'),
-            'updated_by'=>Yii::t('app','Diubah oleh'),
-            'updated_at'=>Yii::t('app','Diubah pada'),
+            'sudah_dinilai' => Yii::t('app', 'Nilai pencacahan?'),
+            'sudah_dinilai_pengolahan' => Yii::t('app', 'Nilai pengolahan?'),
+            
+            'created_by' => Yii::t('app', 'Dibuat oleh'),
+            'created_at' => Yii::t('app', 'Dibuat pada'),
+            'updated_by' => Yii::t('app', 'Diubah oleh'),
+            'updated_at' => Yii::t('app', 'Diubah pada'),
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdkegiatan0()
-    {
+    public function getIdkegiatan0() {
         return $this->hasOne(Kegiatan::className(), ['id' => 'idkegiatan']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdmitra0()
-    {
+    public function getIdmitra0() {
         return $this->hasOne(MitraPencacahan::className(), ['id' => 'idmitra']);
     }
 
@@ -125,8 +124,8 @@ class NilaiPencacahan extends \yii\db\ActiveRecord
      * @inheritdoc
      * @return NilaiPencacahanQuery the active query used by this AR class.
      */
-    public static function find()
-    {
+    public static function find() {
         return new NilaiPencacahanQuery(get_called_class());
     }
+
 }

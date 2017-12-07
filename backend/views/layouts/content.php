@@ -1,7 +1,24 @@
-<div class="content-wrapper">
+<?php
 
-        <?= $content ?>
-    
+use yii\widgets\Breadcrumbs;
+?>
+<div class="content-wrapper">
+    <?=
+    Breadcrumbs::widget([
+        'homeLink' => [
+            'label' => 'Beranda',
+             'template' => "<li><b>You're here:</b></li><li id='no-mark'>{link}</li>",
+            
+         'url' => Yii::$app->homeUrl,
+        ],
+        
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        
+    ])
+    ?>
+
+    <?= $content ?>
+
 </div>
 
 <footer class="main-footer bs-docs-footer">

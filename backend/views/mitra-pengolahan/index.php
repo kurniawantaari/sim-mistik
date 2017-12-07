@@ -22,34 +22,43 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'nik',
             'nama',
             'nama_panggilan',
             'jk',
-            // 'alamat',
-            // 'kdprov',
-            // 'kdkab',
-            // 'kdkec',
-            // 'kddesa',
-            // 'tmptlahir',
-            // 'tgllahir',
-            // 'kdpendidikan',
-            // 'pekerjaan',
-            // 'status',
-            // 'android:boolean',
-            // 'hp1',
-            // 'hp2',
-            // 'email:email',
-            // 'npwp',
-            // 'rekening',
-            // 'foto',
-            // 'nilai',
-            // 'kategori_nilai',
-            // 'sedang_survei:boolean',
-             //  'created_at',
-            //  'updated_at',
-            // 'edit_by',
+           [
+                    'attribute' => 'sedang_survei',
+                    'format' => 'raw',
+                    'options' => [
+                        'width' => '80px',
+                    ],
+                    'label' => 'Sedang Pengolahan?',
+                    'value' => function ($data) {
+                        if ($data->sedang_survei == TRUE)
+                            return "<span class='label label-danger'>" . 'Ya' . "</span>";
+                        else
+                            return "<span class='label label-success'>" . 'Tidak' . "</span>";
+                    }
+                ],
+                [
+                    'attribute' => 'kategori_nilai',
+                    'format' => 'raw',
+                    'options' => [
+                        'width' => '80px',
+                    ],
+                    'label' => 'Rekomendasi',
+                    'value' => function ($data) {
+                        if ($data->kategori_nilai == 'diprioritaskan') {
+                            return "<span class='label label-success'>" . 'Diprioritaskan' . "</span>";
+                        } else if ($data->kategori_nilai == 'dipertimbangkan') {
+                            return "<span class='label label-warning'>" . 'Dipertimbangkan' . "</span>";
+                             } else if ($data->kategori_nilai == 'perlu pembinaan') {
+                            return "<span class='label label-danger'>" . 'Perlu Pembinaan' . "</span>";
+                        } else {
+                            return "<span class='label label-default'>" . 'Not Available' . "</span>";
+                        }
+                    }
+                ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

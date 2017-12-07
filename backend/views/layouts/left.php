@@ -42,25 +42,7 @@ use hscstudio\mimin\components\Mimin;
                 'icon' => 'home',
                 'class' => 'nav-item'
             ],
-            [
-                'label' => 'Kegiatan',
-                'icon' => 'calendar',
-                'url' => Url::toRoute('/kegiatan/index'),
-            ],
-            ['label' => 'Biodata',
-                'icon' => 'address-card',
-                'items' => [
-                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/site/biodata-pencacahan']],
-                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/biodata-pengolahan']],
-                ],
-            ],
-            ['label' => 'Mitra',
-                'icon' => 'child',
-                'items' => [
-                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/mitra-pencacahan/index')],
-                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
-                ],
-            ],
+            ['label' => 'Menu Utama', 'options' => ['class' => 'header']],
             ['label' => 'Entri Mitra',
                 'icon' => 'keyboard-o',
                 'items' => [
@@ -69,6 +51,11 @@ use hscstudio\mimin\components\Mimin;
                 ],
             ],
             [
+                'label' => 'Kegiatan',
+                'icon' => 'calendar',
+                'url' => Url::toRoute('/kegiatan/index'),
+            ],
+             [
                 'label' => 'Penilaian Kinerja',
                 'icon' => 'star-half-o',
                 'url' => '#',
@@ -77,11 +64,40 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/nilai-pengolahan'),],
                 ],
             ],
+            ['label' => 'Data Mitra', 'options' => ['class' => 'header']],
+            
             ['label' => 'Rekomendasi',
                 'icon' => 'thumbs-o-up',
                 'items' => [
                     ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/site/rekomendasi-pencacahan']],
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/rekomendasi-pengolahan']],
+                ],
+            ],
+            ['label' => 'Biodata',
+                'icon' => 'address-card',
+                'items' => [
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/site/biodata-pencacahan']],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/biodata-pengolahan']],
+                ],
+            ],
+           
+            ['label' => 'Mitra',
+                'icon' => 'child',
+                'items' => [
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/mitra-pencacahan/index')],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
+                ],
+            ],
+            ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
+            [
+                'label' => 'Master Wilayah',
+                'icon' => 'globe',
+                'url' => '#',
+                'items' => [
+                    ['label' => 'Provinsi', 'icon' => 'location-arrow', 'url' => ['/provinsi/index'],],
+                    ['label' => 'Kabupaten', 'icon' => 'location-arrow', 'url' => ['/kabupaten/index'],],
+                    ['label' => 'Kecamatan', 'icon' => 'location-arrow', 'url' => ['/kecamatan/index'],],
+                    ['label' => 'Desa', 'icon' => 'location-arrow', 'url' => ['/desa/index'],],
                 ],
             ],
             [
@@ -96,20 +112,13 @@ use hscstudio\mimin\components\Mimin;
                 ],
             ],
             [
-                'label' => 'Wilayah',
-                'icon' => 'globe',
-                'url' => '#',
-                'items' => [
-                    ['label' => 'Provinsi', 'icon' => 'location-arrow', 'url' => ['/provinsi/index'],],
-                    ['label' => 'Kabupaten', 'icon' => 'location-arrow', 'url' => ['/kabupaten/index'],],
-                    ['label' => 'Kecamatan', 'icon' => 'location-arrow', 'url' => ['/kecamatan/index'],],
-                    ['label' => 'Desa', 'icon' => 'location-arrow', 'url' => ['/desa/index'],],
-                ],
-            ],
-            [
-                'label' => 'Download',
+                'label' => 'Download<sup><i class="fa fa-external-link" style="padding-left:7px;"></i></sup>',
                 'icon' => 'download',
+                'encode'=>false,
                 'url' => 'http://s.bps.go.id/simmistik',
+                 'template'=> '<a href="{url}" target="_blank">'
+                . '{icon}{label}'
+                . '</a>',
             ],
         ];
 
