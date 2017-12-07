@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
 use backend\models\Satker;
 use yii\helpers\ArrayHelper;
+use kartik\widgets\SwitchInput;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\User */
@@ -31,9 +32,20 @@ use yii\helpers\ArrayHelper;
         ]);
            ?>
                 
-
+<?= $form->field($model, 'status')->widget(SwitchInput::classname(), [
+		'pluginOptions' => [
+			'onText' => 'Active',
+			'offText' => 'Banned',
+		]
+	]) ?>
         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
+<?php if (!$model->isNewRecord) { ?>
+		<strong> Leave blank if not change password</strong>
+		<div class="ui divider"></div>
+		<?= $form->field($model, 'new_password') ?>
+		<?= $form->field($model, 'repeat_password') ?>
+		<?= $form->field($model, 'old_password') ?>
+	<?php } ?>
         <div class="form-group">
             <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>

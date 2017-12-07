@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use hscstudio\mimin\components\Mimin;
 ?>
 <aside class="main-sidebar">
 
@@ -18,9 +19,9 @@ use yii\helpers\Url;
                 <p><?php echo Yii::$app->user->identity->username; ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                
+
             </div>
-                   </div>
+        </div>
 
 
         <!--         search form 
@@ -35,80 +36,91 @@ use yii\helpers\Url;
                 </form>
                  /.search form -->
         <?php
-        echo
-        dmstr\widgets\Menu::widget(
+        $menuItems = [
+            ['label' => 'Beranda',
+                'url' => ['/site/index'],
+                'icon' => 'home',
+                'class' => 'nav-item'
+            ],
+            [
+                'label' => 'Kegiatan',
+                'icon' => 'calendar',
+                'url' => Url::toRoute('/kegiatan/index'),
+            ],
+            ['label' => 'Biodata',
+                'icon' => 'address-card',
+                'items' => [
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/site/biodata-pencacahan']],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/biodata-pengolahan']],
+                ],
+            ],
+            ['label' => 'Mitra',
+                'icon' => 'child',
+                'items' => [
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/mitra-pencacahan/index')],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
+                ],
+            ],
+            ['label' => 'Entri Mitra',
+                'icon' => 'keyboard-o',
+                'items' => [
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/mitra-pencacahan/create')],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/create')],
+                ],
+            ],
+            [
+                'label' => 'Penilaian Kinerja',
+                'icon' => 'star-half-o',
+                'url' => '#',
+                'items' => [
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/nilai-pencacahan'),],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/nilai-pengolahan'),],
+                ],
+            ],
+            ['label' => 'Rekomendasi',
+                'icon' => 'thumbs-o-up',
+                'items' => [
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/site/rekomendasi-pencacahan']],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/rekomendasi-pengolahan']],
+                ],
+            ],
+            [
+                'label' => 'Pengguna',
+                'icon' => 'users',
+                'url' => '#',
+                'items' => [
+                    ['label' => 'Route', 'icon' => 'random', 'url' => ['/mimin/route'],],
+                    ['label' => 'Level Akses', 'icon' => 'tasks', 'url' => ['/mimin/role'],],
+                    ['label' => 'Tambah Pengguna', 'icon' => 'user-plus', 'url' => ['/site/signup'],],
+                    ['label' => 'Users', 'icon' => 'user-circle', 'url' => ['/mimin/user'],],
+                ],
+            ],
+            [
+                'label' => 'Wilayah',
+                'icon' => 'globe',
+                'url' => '#',
+                'items' => [
+                    ['label' => 'Provinsi', 'icon' => 'location-arrow', 'url' => ['/provinsi/index'],],
+                    ['label' => 'Kabupaten', 'icon' => 'location-arrow', 'url' => ['/kabupaten/index'],],
+                    ['label' => 'Kecamatan', 'icon' => 'location-arrow', 'url' => ['/kecamatan/index'],],
+                    ['label' => 'Desa', 'icon' => 'location-arrow', 'url' => ['/desa/index'],],
+                ],
+            ],
+            [
+                'label' => 'Download',
+                'icon' => 'download',
+                'url' => 'http://s.bps.go.id/simmistik',
+            ],
+        ];
+
+        // $menuItems = Mimin::filterMenu($menuItems);
+        echo dmstr\widgets\Menu::widget(
                 [
                     'options' => ['class' => 'sidebar-menu'],
-                    'items' => [
-                        ['label' => 'Beranda',
-                            'url' => ['/site/index'],
-                            'icon' => 'home',
-                            'class' => 'nav-item'
-                        ],
-                        [
-                            'label' => 'Kegiatan',
-                            'icon' => 'dashboard',
-                            'url' => Url::toRoute('/kegiatan/index'),
-                        ],
-                        ['label' => 'Biodata',
-                            'items' => [
-                                ['label' => 'Mitra Pencacahan', 'url' => ['/site/biodata-pencacahan']],
-                                ['label' => 'Mitra Pengolahan', 'url' => ['/site/biodata-pengolahan']],
-                            ],
-                        ],
-                        ['label' => 'Mitra',
-                            'items' => [
-                                ['label' => 'Mitra Pencacahan', 'icon' => 'user', 'url' => Url::toRoute('/mitra-pencacahan/index')],
-                                ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
-                            ],
-                        ],
-                        ['label' => 'Entri Mitra',
-                            'items' => [
-                                ['label' => 'Mitra Pencacahan', 'url' => Url::toRoute('/mitra-pencacahan/create')],
-                                ['label' => 'Mitra Pengolahan', 'url' => Url::toRoute('/mitra-pengolahan/create')],
-                            ],
-                        ],
-                        [
-                            'label' => 'Penilaian Kinerja',
-                            'icon' => 'star-half-o',
-                            'url' => '#',
-                            'items' => [
-                                ['label' => 'Mitra Pencacahan', 'icon' => 'user', 'url' => Url::toRoute('/nilai-pencacahan'),],
-                                ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/nilai-pengolahan'),],
-                            ],
-                        ],
-                        ['label' => 'Rekomendasi',
-                            'icon' => 'thumbs-o-up',
-                            'items' => [
-                                ['label' => 'Mitra Pencacahan', 'icon' => 'user', 'url' => ['/site/rekomendasi-pencacahan']],
-                                ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/rekomendasi-pengolahan']],
-                            ],
-                        ],
-                        [
-                            'label' => 'Pengguna',
-                            'icon' => 'users',
-                            'url' => '#',
-                            'items' => [
-                                ['label' => 'Route', 'icon' => 'random', 'url' => ['/mimin/route'],],
-                                ['label' => 'Level Akses', 'icon' => 'tasks', 'url' => ['/mimin/role'],],
-                                ['label' => 'Tambah Pengguna', 'icon' => 'user-plus', 'url' => ['/site/signup'],],
-                                ['label' => 'Users', 'icon' => 'user-circle', 'url' => ['/user/index'],],
-                            ],
-                        ],
-                        [
-                            'label' => 'Wilayah',
-                            'icon' => 'globe',
-                            'url' => '#',
-                            'items' => [
-                                ['label' => 'Provinsi', 'icon' => 'random', 'url' => ['/provinsi/index'],],
-                                ['label' => 'Kabupaten', 'icon' => 'tasks', 'url' => ['/kabupaten/index'],],
-                                ['label' => 'Kecamatan', 'icon' => 'user-circle', 'url' => ['/kecamatan/index'],],
-                                ['label' => 'Desa', 'icon' => 'user-circle', 'url' => ['/desa/index'],],
-                            ],
-                        ],
-                    ],
+                    'items' => $menuItems,
                 ]
         );
+        ;
         ?>
 
     </section>

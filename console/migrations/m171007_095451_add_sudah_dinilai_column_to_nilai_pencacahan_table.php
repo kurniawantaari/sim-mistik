@@ -13,6 +13,7 @@ class m171007_095451_add_sudah_dinilai_column_to_nilai_pencacahan_table extends 
     public function up()
     {
         $this->addColumn('nilai_pencacahan', 'sudah_dinilai', $this->boolean()->defaultValue(FALSE));
+         $this->addColumn('nilai_pencacahan', 'sudah_dinilai_pengolahan', $this->boolean()->defaultValue(FALSE));
     }
 
     /**
@@ -21,5 +22,7 @@ class m171007_095451_add_sudah_dinilai_column_to_nilai_pencacahan_table extends 
     public function down()
     {
         $this->dropColumn('nilai_pencacahan', 'sudah_dinilai');
+        $this->dropColumn('nilai_pencacahan', 'sudah_dinilai_pengolahan');
+        
     }
 }

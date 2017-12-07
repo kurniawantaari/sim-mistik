@@ -13,6 +13,8 @@ return [
     'modules' => [
         'mimin' => [
             'class' => '\hscstudio\mimin\Module',
+             'viewPath'=>'@app/views/mimin',
+            'layoutPath'=>'@app/views/layout',
         ],
         'gridview' => [
             'class' => '\kartik\grid\Module'

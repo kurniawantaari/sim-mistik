@@ -15,7 +15,8 @@ class AppAsset extends AssetBundle {
         'css/site.css',
         'font-awesome-4.7.0/css/font-awesome.min.css',
         'css/magnific-popup/magnific-popup.css',
-        'css/creative.css'
+        'css/creative.css',
+     
     ];
     public $js = [
         'js/popper/popper.min.js',
