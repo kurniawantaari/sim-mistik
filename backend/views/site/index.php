@@ -26,11 +26,11 @@ $this->title = 'SIM-MISTIK';
         </div>
 
     </section>
-    <section id="penilaian">
+    <section class="section-heading" id="penilaian">
 
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Penilaian Mitra</h2>
+                <h2>Penilaian Mitra</h2>
                 <hr class="green">
             </div>
         </div>
