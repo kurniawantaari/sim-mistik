@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\administrator\models\RouteSearch */
@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		<?= Html::a('Generate Route', ['generate'], ['class' => 'btn btn-primary']) ?>
 	</p>
 
-	<?= GridView::widget([
+	<?= GridView::widget([ 'responsive'=>true,
 		'dataProvider' => $dataProvider,
 		'filterModel' => $searchModel,
 		'columns' => [

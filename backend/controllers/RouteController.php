@@ -1,10 +1,10 @@
 <?php
 
-namespace hscstudio\mimin\controllers;
+namespace backend\controllers;
 
 use Yii;
-use hscstudio\mimin\models\Route;
-use hscstudio\mimin\models\RouteSearch;
+use backend\models\Route;
+use backend\models\RouteSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

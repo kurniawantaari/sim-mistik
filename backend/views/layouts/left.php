@@ -42,7 +42,7 @@ use hscstudio\mimin\components\Mimin;
                 'icon' => 'calendar',
                 'url' => Url::toRoute('/kegiatan/index'),
             ],
-             [
+            [
                 'label' => 'Penilaian Kinerja',
                 'icon' => 'star-half-o',
 //                'url' => '#',
@@ -52,7 +52,6 @@ use hscstudio\mimin\components\Mimin;
                 ],
             ],
             ['label' => 'Data Mitra', 'options' => ['class' => 'header']],
-            
             ['label' => 'Rekomendasi',
                 'icon' => 'thumbs-o-up',
                 'items' => [
@@ -67,7 +66,6 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/mitra/biodata-pengolahan']],
                 ],
             ],
-           
             ['label' => 'Mitra',
                 'icon' => 'child',
                 'items' => [
@@ -75,7 +73,18 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
                 ],
             ],
-             ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
+            ['label' => 'Rekap', 'options' => ['class' => 'header']],
+            [
+                'label' => 'Nilai Mitra',
+                'icon' => 'bar-chart',
+                'url' => Url::toRoute('/rekap/nilaimitra'),
+            ],
+            [
+                'label' => 'Mitra - Kegiatan',
+                'icon' => 'chain',
+                'url' => Url::toRoute('/rekap/mitrakegiatan'),
+            ],
+            ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
             [
                 'label' => 'Master Wilayah',
                 'icon' => 'globe',
@@ -101,22 +110,23 @@ use hscstudio\mimin\components\Mimin;
             [
                 'label' => 'Download<sup><i class="fa fa-external-link" style="padding-left:7px;"></i></sup>',
                 'icon' => 'download',
-                'encode'=>false,
+                'encode' => false,
                 'url' => 'http://s.bps.go.id/simmistik',
-                 'template'=> '<a href="{url}" target="_blank">'
+                'template' => '<a href="{url}" target="_blank">'
                 . '{icon}{label}'
                 . '</a>',
             ],
         ];
 
-        // $menuItems = Mimin::filterMenu($menuItems);
+        //$menuItemsfiltered = Mimin::filterMenu($menuItems);
         echo dmstr\widgets\Menu::widget(
                 [
-                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
-                    'items' => $menuItems,
+                    'options' => ['class' => 'sidebar-menu tree', 'data-widget' => 'tree'],
+                    'items' => $menuItems,//filtered,
                 ]
-        ); ?>
-        
+        );
+        ?>
+
     </section>
 
 </aside>
