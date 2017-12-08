@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 
-$this->title = 'SIM-MISTIK';
+$this->title = '';
 ?>
 <div class="site-index">
     <header class="masthead">

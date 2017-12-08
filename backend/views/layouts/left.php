@@ -19,22 +19,9 @@ use hscstudio\mimin\components\Mimin;
                 <p><?php echo Yii::$app->user->identity->username; ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-
             </div>
         </div>
 
-
-        <!--         search form 
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                      <span class="input-group-btn">
-                        <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
-                        </button>
-                      </span>
-                    </div>
-                </form>
-                 /.search form -->
         <?php
         $menuItems = [
             ['label' => 'Beranda',
@@ -58,7 +45,7 @@ use hscstudio\mimin\components\Mimin;
              [
                 'label' => 'Penilaian Kinerja',
                 'icon' => 'star-half-o',
-                'url' => '#',
+//                'url' => '#',
                 'items' => [
                     ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/nilai-pencacahan'),],
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/nilai-pengolahan'),],
@@ -69,15 +56,15 @@ use hscstudio\mimin\components\Mimin;
             ['label' => 'Rekomendasi',
                 'icon' => 'thumbs-o-up',
                 'items' => [
-                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/site/rekomendasi-pencacahan']],
-                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/rekomendasi-pengolahan']],
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/mitra/rekomendasi-pencacahan']],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/mitra/rekomendasi-pengolahan']],
                 ],
             ],
             ['label' => 'Biodata',
                 'icon' => 'address-card',
                 'items' => [
-                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/site/biodata-pencacahan']],
-                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/site/biodata-pengolahan']],
+                    ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/mitra/biodata-pencacahan']],
+                    ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/mitra/biodata-pengolahan']],
                 ],
             ],
            
@@ -88,11 +75,11 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
                 ],
             ],
-            ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
+             ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
             [
                 'label' => 'Master Wilayah',
                 'icon' => 'globe',
-                'url' => '#',
+//                'url' => '#',
                 'items' => [
                     ['label' => 'Provinsi', 'icon' => 'location-arrow', 'url' => ['/provinsi/index'],],
                     ['label' => 'Kabupaten', 'icon' => 'location-arrow', 'url' => ['/kabupaten/index'],],
@@ -103,7 +90,7 @@ use hscstudio\mimin\components\Mimin;
             [
                 'label' => 'Pengguna',
                 'icon' => 'users',
-                'url' => '#',
+//                'url' => '#',
                 'items' => [
                     ['label' => 'Route', 'icon' => 'random', 'url' => ['/mimin/route'],],
                     ['label' => 'Level Akses', 'icon' => 'tasks', 'url' => ['/mimin/role'],],
@@ -125,13 +112,11 @@ use hscstudio\mimin\components\Mimin;
         // $menuItems = Mimin::filterMenu($menuItems);
         echo dmstr\widgets\Menu::widget(
                 [
-                    'options' => ['class' => 'sidebar-menu'],
+                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                     'items' => $menuItems,
                 ]
-        );
-        ;
-        ?>
-
+        ); ?>
+        
     </section>
 
 </aside>

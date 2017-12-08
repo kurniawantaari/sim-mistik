@@ -5,6 +5,7 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 use yii\helpers\Url;
+Yii::$app->name="SIM-MISTIK";
 ?>
 
 <header class="main-header">
@@ -13,7 +14,7 @@ use yii\helpers\Url;
 
     <nav class="navbar navbar-static-top" role="navigation">
 
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
 
