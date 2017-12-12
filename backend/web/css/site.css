@@ -47,12 +47,13 @@ border-color: #f9a825;
     background-color: #00a65a;
 }
 .btn-teal{
-    background-color: #00a65a;
-    color:white;
-    border-radius:50%;
+    background-color: transparent !important;
+    color: #008749 !important;
+    border: 3px solid #008749 !important;
+    border-radius:0% !important;
 }
 .btn-teal:hover{
-    color:white;
+    color: #008749;
 
 }
 
@@ -175,7 +176,7 @@ a.desc:after {
 
 .text-block-primary{
     padding: 10px;
-    background-color: rgba(0, 166, 90, 0.7);
+    background-color: #008749;
     font-weight: normal !important;
     color:white !important;
       /*background-color: rgba(0, 150, 136, 0.8);*/

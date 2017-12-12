@@ -11,6 +11,7 @@ use yii\filters\AccessControl;
 use common\models\LoginForm;
 use backend\models\PasswordResetRequestForm;
 use backend\models\ResetPasswordForm;
+use yii\data\ActiveDataProvider;
 
 /**
  * Site controller
@@ -24,7 +25,7 @@ class SiteController extends Controller {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                //'only' => ['logout', 'signup'],
+               // 'only' => ['dashboard'],
                 'rules' => [
                     [
                         'actions' => ['login'],
@@ -36,6 +37,11 @@ class SiteController extends Controller {
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+//                    [
+//                       'actions' => ['dashboard'],
+//                        'allow' => false,
+//                        'roles' => ['@'],
+//                    ],
                 ],
             ],
             'verbs' => [
@@ -147,6 +153,37 @@ class SiteController extends Controller {
         return $this->render('resetPassword', [
                     'model' => $model,
         ]);
+    }
+
+    public function actionDashboard() {
+
+//        $dataCacah = new ActiveDataProvider([
+//            'query' => \backend\models\MitraPencacahan::find()->limit(3),
+//            'sort' => [
+//                'defaultOrder' => [
+//                    'nilai' => SORT_DESC,
+//                ]],
+//            'pagination' => [
+//                'pageSize' => 3,
+//            ],
+//        ]);
+//        $dataOlah = new ActiveDataProvider([
+//        'query' => \backend\models\MitraPengolahan::find()->limit(3),
+//        'sort' => [
+//        'defaultOrder' => [
+//        'nilai' => SORT_DESC,
+//        ]
+//        ],
+//        'pagination' => [
+//                'pageSize' => 3,]
+//        ]);
+        return $this->render('build', [
+                   
+        ]);
+//         return $this->render('dashboard', [
+//                    'dataCacah' => $dataCacah,
+//                    'dataOlah' => $dataOlah,
+//        ]);
     }
 
 }

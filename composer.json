@@ -18,20 +18,12 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
+
         "dmstr/yii2-adminlte-asset": "*",
         "hscstudio/yii2-mimin": "*",
-        "mdmsoft/yii2-admin": "~2.0",
+
         "kartik-v/yii2-field-range": "*",
-        "kartik-v/yii2-widget-growl": "*"
-        
-    },
-    "require-dev": {
-        "yiisoft/yii2-debug": "~2.0.0",
-        "yiisoft/yii2-gii": "~2.0.0",
-        "yiisoft/yii2-faker": "~2.0.0",
-        "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1",
-        
+        "kartik-v/yii2-widget-growl": "*",
         "kartik-v/yii2-tabs-x": "*",
         "kartik-v/yii2-widget-select2": "*",
         "kartik-v/yii2-widget-depdrop": "@dev",
@@ -43,11 +35,19 @@
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-detail-view": "*",
         "kartik-v/yii2-editable": "@dev"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "mdmsoft/yii2-admin": "~2.0"
         
     },
     "config": {
         "process-timeout": 1800,
-        "fxp-asset":{
+        "fxp-asset": {
             "installer-paths": {
                 "npm-asset-library": "vendor/npm",
                 "bower-asset-library": "vendor/bower"

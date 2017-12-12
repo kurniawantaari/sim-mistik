@@ -6,11 +6,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\administrator\models\User */
 
-$this->title = 'Create User';
+$this->title = 'Tambah Pengguna';
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-create">
+<section><div class="user-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -19,3 +19,4 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
+</section>

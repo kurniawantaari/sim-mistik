@@ -42,7 +42,7 @@ use dmstr\widgets\Alert;
 
 <footer class="main-footer bs-docs-footer">
     <div class="container text-center">
-        <div>Badan Pusat Statistik Kabupaten Hulu Sungai Utara <br>
+        <div><b>Badan Pusat Statistik Kabupaten Hulu Sungai Utara</b> <br>
             Jln. H. Saberan Effendi RT 03, Kel. Sungai Malang, Amuntai, 71418<br>
             Telp/Fax. (0527) 61049</div> 
         <div>Hubungi Kami:</div>

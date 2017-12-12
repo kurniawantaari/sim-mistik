@@ -29,7 +29,13 @@ use hscstudio\mimin\components\Mimin;
                 'icon' => 'home',
                 'class' => 'nav-item'
             ],
-            ['label' => 'Menu Utama', 'options' => ['class' => 'header']],
+            ['label' => 'Dashboard',
+                'url' => ['/site/dashboard'],
+                'icon' => 'dashboard',
+                'class' => 'nav-item',
+                'template' => '<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-red">segera</small></span></a>'
+            ],
+            ['label' => 'MENU UTAMA', 'options' => ['class' => 'header']],
             ['label' => 'Entri Mitra',
                 'icon' => 'keyboard-o',
                 'items' => [
@@ -51,7 +57,7 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/nilai-pengolahan'),],
                 ],
             ],
-            ['label' => 'Data Mitra', 'options' => ['class' => 'header']],
+            ['label' => 'DATA MITRA', 'options' => ['class' => 'header']],
             ['label' => 'Rekomendasi',
                 'icon' => 'thumbs-o-up',
                 'items' => [
@@ -73,18 +79,21 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
                 ],
             ],
-            ['label' => 'Rekap', 'options' => ['class' => 'header']],
+            ['label' => 'REKAP', 'options' => ['class' => 'header']],
             [
                 'label' => 'Nilai Mitra',
                 'icon' => 'bar-chart',
-                'url' => Url::toRoute('/rekap/nilaimitra'),
+                'url' => Url::toRoute('/rekap/rekap-nilai'),
+                'template' => '<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">baru</small></span></a>'
             ],
             [
                 'label' => 'Mitra - Kegiatan',
                 'icon' => 'chain',
-                'url' => Url::toRoute('/rekap/mitrakegiatan'),
+                'url' => Url::toRoute('/rekap/rekap-mitra_kegiatan'),
+           'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">baru</small></span></a>'
+               
             ],
-            ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
+            ['label' => 'LAIN-LAIN', 'options' => ['class' => 'header']],
             [
                 'label' => 'Master Wilayah',
                 'icon' => 'globe',
@@ -103,7 +112,7 @@ use hscstudio\mimin\components\Mimin;
                 'items' => [
                     ['label' => 'Route', 'icon' => 'random', 'url' => ['/mimin/route'],],
                     ['label' => 'Level Akses', 'icon' => 'tasks', 'url' => ['/mimin/role'],],
-                    ['label' => 'Tambah Pengguna', 'icon' => 'user-plus', 'url' => ['/site/signup'],],
+                    ['label' => 'Tambah Pengguna', 'icon' => 'user-plus', 'url' => ['/mimin/user/create'],],
                     ['label' => 'Users', 'icon' => 'user-circle', 'url' => ['/mimin/user'],],
                 ],
             ],
@@ -122,7 +131,7 @@ use hscstudio\mimin\components\Mimin;
         echo dmstr\widgets\Menu::widget(
                 [
                     'options' => ['class' => 'sidebar-menu tree', 'data-widget' => 'tree'],
-                    'items' => $menuItems,//filtered,
+                    'items' => $menuItems, //filtered,
                 ]
         );
         ?>

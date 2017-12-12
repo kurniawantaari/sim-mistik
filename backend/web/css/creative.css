@@ -18,6 +18,15 @@ li#no-mark::before {
     background-color: #c4ffe4;
  
 }
+.my-bg-green{
+    background-color: #008749;
+}
+.text-white{
+    color:white;
+}
+.content-wrapper {
+    background-color: white !important;
+}
 td span{
     padding:0px 2px;
 }
@@ -157,7 +166,7 @@ header.masthead {
   width: 100%;
   min-height: auto;
   text-align: center;
-  color: white;
+  color: #008749;
   background-image: url("../img/header.jpg");
   background-position: center;
   -webkit-background-size: cover;
