@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
+use hscstudio\mimin\components\Mimin;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
@@ -71,11 +72,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a(implode(', ', $roles), ['view', 'id' => $data->id]);
                     }
                 ], [
-                    'options' => [
-                        'width' => '80px',
-                    ],
-                    'class' => 'yii\grid\ActionColumn'
-                ],
+          'class' => 'yii\grid\ActionColumn',
+          'template' => Mimin::filterActionColumn([
+             'view', 'update','delete'
+          ],$this->context->route),
+                  ]
             ],
         ]);
         ?>

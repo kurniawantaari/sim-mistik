@@ -31,6 +31,7 @@ use yii\web\IdentityInterface;
 class User extends ActiveRecord implements IdentityInterface {
 
     public $new_password, $old_password, $repeat_password;
+     public $password;
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
@@ -57,13 +58,13 @@ class User extends ActiveRecord implements IdentityInterface {
     public function rules() {
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-            [['username', 'password_hash', 'nama', 'nip_baru', 'satker', 'auth_key', 'email', 'created_at', 'updated_at'], 'required'],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, 1,0,self::STATUS_DELETED]],
+            [['username', 'password_hash', 'nama', 'nip_baru', 'satker', 'auth_key', 'email'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'nama', 'satker', 'email'], 'string', 'max' => 255],
             [['nip_baru'], 'string', 'min' => 18, 'max' => 18],
             [['auth_key'], 'string', 'max' => 32],
-            [['email'], 'email', 'unique'],
+            [['email'], 'email'],
             [['nip_baru'], 'unique'],
             [['password_reset_token'], 'unique'],
             [['username'], 'unique'],
@@ -109,14 +110,14 @@ class User extends ActiveRecord implements IdentityInterface {
      * @return \yii\db\ActiveQuery
      */
     public function getMitraPencacahans() {
-        return $this->hasMany(MitraPencacahan::className(), ['edit_by' => 'id']);
+        return $this->hasMany(MitraPencacahan::className(), ['updated_by' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getMitraPengolahans() {
-        return $this->hasMany(MitraPengolahan::className(), ['edit_by' => 'id']);
+        return $this->hasMany(MitraPengolahan::className(), ['updated_by' => 'id']);
     }
 
     /**

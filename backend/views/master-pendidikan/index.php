@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
+
+use hscstudio\mimin\components\Mimin;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
@@ -26,7 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'kdpendidikan',
             'jenjang',
 
-            ['class' => 'yii\grid\ActionColumn'],
+           [
+          'class' => 'yii\grid\ActionColumn',
+          'template' => Mimin::filterActionColumn([
+             'view', 'update','delete'
+          ],$this->context->route),
+                  ]
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>

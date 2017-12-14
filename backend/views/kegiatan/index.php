@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use hscstudio\mimin\components\Mimin;
 use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
@@ -36,7 +37,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'tanggal_selesai',
                 [
                     'class' => 'yii\grid\ActionColumn',
-                    'template' => '{view}   {assignmitrapencacahan} {assignmitrapengolahan}{kegiatanselesai}{kegiatanlanjut}  {update} {delete}',
+                    
+          'template' => Mimin::filterActionColumn([
+             'view', 'update','delete'
+          ],$this->context->route),
+                  
+                    'template' => Mimin::filterActionColumn(['view', 'assignmitrapencacahan', 'assignmitrapengolahan', 'kegiatanselesai', 'kegiatanlanjut', 'update', 'delete' ],$this->context->route),
                     'buttons' => [
                         'assignmitrapencacahan' => function ($url) {
                             return Html::a(

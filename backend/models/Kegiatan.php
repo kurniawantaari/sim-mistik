@@ -49,7 +49,7 @@ class Kegiatan extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama', 'tahun', 'seksi', 'tanggal_mulai', 'tanggal_selesai','created_at','created_by','updated_at','updated_by'], 'required'],
+            [['nama', 'tahun', 'seksi', 'tanggal_mulai', 'tanggal_selesai'], 'required'],
             [['tanggal_mulai', 'tanggal_selesai'], 'safe'],
             [['nama', 'seksi'], 'string', 'max' => 255],
             [['tahun'], 'string', 'max' => 4],

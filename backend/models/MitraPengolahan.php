@@ -70,7 +70,7 @@ class MitraPengolahan extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['nik', 'nama', 'jk', 'alamat', 'kdprov', 'kdkab', 'kdkec', 'kddesa', 'hp1', 'created_at', 'updated_at', 'created_by','updated_by'], 'required'],
+            [['nik', 'nama', 'jk', 'alamat', 'kdprov', 'kdkab', 'kdkec', 'kddesa', 'hp1'], 'required'],
             [['tgllahir', 'last_edit'], 'safe'],
             [['kdpendidikan', 'nilai'], 'integer'],
             [['android', 'sedang_survei'], 'boolean'],

@@ -1,6 +1,6 @@
 <?php
 
-namespace hscstudio\mimin\models;
+namespace backend\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;

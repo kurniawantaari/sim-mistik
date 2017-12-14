@@ -13,7 +13,7 @@ return [
     'modules' => [
         'mimin' => [
             'class' => '\hscstudio\mimin\Module',
-             'viewPath'=>'@app/views/mimin',
+             'viewPath'=>'@app/views',
             'layoutPath'=>'@app/views/layout',
         ],
         'gridview' => [
@@ -28,13 +28,13 @@ return [
         /*
          * Kalau mau migrasi, di-comment bagian ini.
          *      */
-//    'as access' => [
-//     'class' => '\hscstudio\mimin\components\AccessControl',
-//	 'allowActions' => [
-//		// add wildcard allowed action here!
-//		'site/*',
-//		'debug/*',
-//		'mimin/*', // only in dev mode
-//	],
-//],
+    'as access' => [
+     'class' => '\hscstudio\mimin\components\AccessControl',
+	 'allowActions' => [
+		// add wildcard allowed action here!
+		'site/login',
+		//'debug/*',
+		//'mimin/*', // only in dev mode
+	],
+],
 ];

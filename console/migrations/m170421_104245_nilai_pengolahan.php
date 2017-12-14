@@ -21,7 +21,7 @@ class m170421_104245_nilai_pengolahan extends Migration {
             'kecepatan_entri' => $this->smallInteger(),
             'kesalahan_entri' => $this->smallInteger(),
             'r_nilai' => $this->smallInteger(), //untuk keperluan filter
-             'created_by'=>$this->integer()->notNull(),
+            'created_by'=>$this->integer()->notNull(),
             'updated_by'=>$this->integer()->notNull(),
             'created_at'=>$this->integer()->notNull(),
             'updated_at'=>$this->integer()->notNull(),

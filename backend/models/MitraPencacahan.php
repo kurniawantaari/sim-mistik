@@ -6,6 +6,7 @@ use Yii;
 use common\models\User;
 use yii\behaviors\TimestampBehavior;
 use yii\behaviors\BlameableBehavior;
+use yii\behaviors\SluggableBehavior;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -71,7 +72,7 @@ class MitraPencacahan extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['nik', 'nama', 'jk', 'alamat', 'kdprov', 'kdkab', 'kdkec', 'kddesa', 'hp1', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'required'],
+            [['nik', 'nama', 'jk', 'alamat', 'kdprov', 'kdkab', 'kdkec', 'kddesa', 'hp1'], 'required'],
             [['tgllahir', 'last_edit'], 'safe'],
             [['kdpendidikan', 'nilai'], 'integer'],
             [['android', 'sedang_survei'], 'boolean'],
@@ -82,14 +83,12 @@ class MitraPencacahan extends \yii\db\ActiveRecord {
             [['kdkec', 'kddesa'], 'string', 'max' => 3],
             [['nik'], 'unique'],
             [['kdpendidikan'], 'exist', 'skipOnError' => true, 'targetClass' => MasterPendidikan::className(), 'targetAttribute' => ['kdpendidikan' => 'kdpendidikan']],
-            
-                // checks if "file" to be imported is a valid image with proper size
-                [['file'], 'image', 'extensions' => 'jpg',
-                    'minWidth' => 200, 'maxWidth' => 200,
-                   'minHeight' => 300, 'maxHeight' => 300,
-                    'mimeTypes'=>'image/jpeg',
-                ],
-            
+            // checks if "file" to be imported is a valid image with proper size
+            [['file'], 'image', 'extensions' => 'jpg',
+                'minWidth' => 200, 'maxWidth' => 200,
+                'minHeight' => 300, 'maxHeight' => 300,
+                'mimeTypes' => 'image/jpeg',
+            ],
         ];
     }
 

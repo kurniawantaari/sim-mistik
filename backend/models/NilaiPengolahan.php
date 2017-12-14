@@ -52,7 +52,7 @@ class NilaiPengolahan extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['idmitra', 'idkegiatan', 'sudah_dinilai', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'required'],
+            [['idmitra', 'idkegiatan', 'sudah_dinilai'], 'required'],
             [['sudah_dinilai'], 'boolean'],
             [['idmitra', 'idkegiatan', 'waktu_edit', 'kecepatan_edit', 'kesalahan_edit', 'waktu_entri', 'kecepatan_entri', 'kesalahan_entri', 'r_nilai'], 'integer'],
             [['kecepatan_edit', 'kesalahan_edit', 'kecepatan_entri', 'kesalahan_entri', 'r_nilai'], 'compare', 'compareValue' => 0, 'operator' => '>=', 'type' => 'number'],

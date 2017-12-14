@@ -32,12 +32,12 @@ use kartik\widgets\SwitchInput;
         ]);
            ?>
                 
-<?= $form->field($model, 'status')->widget(SwitchInput::classname(), [
+<?php echo $form->field($model, 'status')->widget(SwitchInput::classname(), [
 		'pluginOptions' => [
 			'onText' => 'Active',
 			'offText' => 'Banned',
 		]
-	]) ?>
+	]); ?>
         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 <?php if (!$model->isNewRecord) { ?>
 		<strong> Leave blank if not change password</strong>

@@ -3,8 +3,15 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 use common\models\User;
+use backend\models\AuthAssignment;
+use backend\models\AuthItem;
+//use backend\models\Auth;
+use backend\models\UserSearch;
 use yii\web\Controller;
+use yii\filters\AccessControl;
+
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -109,26 +116,24 @@ class UserController extends Controller
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 * @return mixed
 	 */
-	public function actionCreate()
-	{
-		$model = new User();
+	public function actionCreate(){
+	  $model = new User();
+        if ($model->load(Yii::$app->request->post())) {
+             $model->setPassword($model->password);
+        $model->generateAuthKey();
+       
+            if ($model->save(false)) {
+                Yii::$app->session->setFlash('success', 'Berhasil menambahkan pengguna.');
+                $model = new User();
+            } else {
+                Yii::$app->session->setFlash('warning', 'Gagal menambahkan pengguna.');
+            }
+        }
 
-		if ($model->load(Yii::$app->request->post())) {
-			$model->setPassword('password');
-			$model->status = $model->status==1?10:0;
-			if ($model->save()) {
-				Yii::$app->session->setFlash('success', 'User berhasil dibuat dengan password <b>password</b>');
-			} else {
-				Yii::$app->session->setFlash('error', 'User gagal dibuat');
-			}
-
-			return $this->redirect(['view', 'id' => $model->id]);
-		} else {
-			return $this->render('create', [
-				'model' => $model,
-			]);
-		}
-	}
+        return $this->render('create', [
+                    'model' => $model,
+        ]);
+    }
 
 	/**
      * Updates an existing User model.

@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use hscstudio\mimin\components\Mimin;
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
 
@@ -26,7 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['class' => 'yii\grid\SerialColumn'],
                 'kdprov',
                 'nmprov',
-                ['class' => 'yii\grid\ActionColumn'],
+               [
+          'class' => 'yii\grid\ActionColumn',
+          'template' => Mimin::filterActionColumn([
+             'view', 'update','delete'
+          ],$this->context->route),
+                  ]
             ],
         ]);
         ?>

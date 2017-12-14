@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use hscstudio\mimin\components\Mimin;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\administrator\models\AuthItemSearch */
@@ -35,12 +36,12 @@ $this->params['breadcrumbs'][] = $this->title;
 			// 'created_at',
 			// 'updated_at',
 			*/
-			[
-				'options' => [
-					'width' => '80px',
-				],
-				'class' => 'yii\grid\ActionColumn'
-			],
+			 [
+          'class' => 'yii\grid\ActionColumn',
+          'template' => Mimin::filterActionColumn([
+             'view', 'update','delete'
+          ],$this->context->route),
+                  ]
 		],
 	]); ?>
 

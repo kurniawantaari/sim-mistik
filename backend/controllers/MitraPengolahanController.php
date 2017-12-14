@@ -90,15 +90,15 @@ class MitraPengolahanController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->findModel($id);
-     //   $model->file=$model->foto;
-        if ($model->load(Yii::$app->request->post())) { 
+        //   $model->file=$model->foto;
+        if ($model->load(Yii::$app->request->post())) {
 //check if new photo has been browsed or not
             if (UploadedFile::getInstance($model, 'file')) {
-        //get the instance of the uploaded file 
+                //get the instance of the uploaded file 
                 $model->file = UploadedFile::getInstance($model, 'file');
                 $imageLocation = 'uploads/' . $model->nik . "." . $model->file->extension;
                 $model->file->saveAs($imageLocation);
-        //save the path to the DB
+                //save the path to the DB
                 $model->foto = $imageLocation;
             }
             $model->save();
@@ -135,6 +135,14 @@ class MitraPengolahanController extends Controller {
         }
     }
 
+    protected function findModelBySlug($nik) {
+        if (($model = MitraPengolahan::findOne(['nik' => $nik])) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException();
+        }
+    }
+
     public function actionKabupaten() {
         $out = [];
         if (isset($_POST['depdrop_parents'])) {
@@ -146,7 +154,7 @@ class MitraPengolahanController extends Controller {
                 foreach ($list as $i => $kab) {
                     $out[] = ['id' => $kab['id'], 'name' => $kab['name']];
                 }
-                
+
                 // Shows how you can preselect a value
                 echo Json::encode(['output' => $out, 'selected' => $selected]);
                 return;

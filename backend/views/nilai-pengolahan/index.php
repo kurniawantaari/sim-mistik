@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use hscstudio\mimin\components\Mimin;
 use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
@@ -14,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <section>
     <div class="nilai-pengolahan-index">
 
-         <h1><?= Html::encode($this->title) ?></h1>
+        <h1><?= Html::encode($this->title) ?></h1>
         <?php
         echo $this->render('_search', ['model' => $searchModel]);
 
@@ -27,9 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['class' => 'yii\grid\SerialColumn'],
                 'idmitra0.nik',
                 'idmitra0.nama',
-                 'idkegiatan0.nama',
-                 'idkegiatan0.tahun',
-                   [
+                'idkegiatan0.nama',
+                'idkegiatan0.tahun',
+                [
                     'attribute' => 'sudah_dinilai',
                     'format' => 'raw',
                     'options' => [
@@ -41,20 +42,22 @@ $this->params['breadcrumbs'][] = $this->title;
                         else
                             return "<span class='label label-success'>" . 'Belum' . "</span>";
                     }
-                ], 
+                ],
                 [
                     'class' => 'yii\grid\ActionColumn',
-                    'template' => '{update}',
-                    'buttons' => [
-                        'update' => function ($url) {
-                            return Html::a(
-                                            '<span class="glyphicon glyphicon-edit"></span>', $url, [
-                                        'title' => 'Beri nilai',
-                                        'data-pjax' => '0',
-                                            ]
-                            );
-                        },
-                    ],
+                    'template' => Mimin::filterActionColumn([
+                        'update',
+                            ], $this->context->route),
+                ],
+                'buttons' => [
+                    'update' => function ($url) {
+                        return Html::a(
+                                        '<span class="glyphicon glyphicon-edit"></span>', $url, [
+                                    'title' => 'Beri nilai',
+                                    'data-pjax' => '0',
+                                        ]
+                        );
+                    },
                 ],
             ],
         ]);

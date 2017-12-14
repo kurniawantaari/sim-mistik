@@ -8,6 +8,8 @@ use kartik\widgets\DepDrop;
 use backend\models\Kegiatan;
 use yii\helpers\ArrayHelper;
 
+use hscstudio\mimin\components\Mimin;
+
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\NilaiPencacahanSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -58,9 +60,12 @@ $this->params['breadcrumbs'][] = $this->title;
                             return "<span class='label label-success'>" . 'Belum' . "</span>";
                     }
                 ],
-                [
+        
+                        [
                     'class' => 'yii\grid\ActionColumn',
-                    'template' => '{nilaipencacahan}   {nilaipengolahan}',
+                  'template' => Mimin::filterActionColumn([
+             'nilaipencacahan', 'nilaipengolahan'
+          ],$this->context->route),
                     'buttons' => ['nilaipencacahan' => function ($url) {
                             return Html::a(
                                             '<span class="fa fa-pencil"></span>', $url, [

@@ -37,8 +37,8 @@ echo DatePicker::widget([
     'model' => $model,
     'attribute' => 'tanggal_mulai',
     'attribute2' => 'tanggal_selesai',
-    'options' => ['placeholder' => 'Tanggal Mulai'],
-    'options2' => ['placeholder' => 'Tanggal Selesai'],
+    'options' => ['placeholder' => 'YYYY-MM-DD'],
+    'options2' =>  ['placeholder' => 'YYYY-MM-DD'],
     'type' => DatePicker::TYPE_RANGE,
     'form' => $form,
     'pluginOptions' => [

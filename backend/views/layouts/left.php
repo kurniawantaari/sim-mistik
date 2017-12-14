@@ -110,10 +110,10 @@ use hscstudio\mimin\components\Mimin;
                 'icon' => 'users',
 //                'url' => '#',
                 'items' => [
-                    ['label' => 'Route', 'icon' => 'random', 'url' => ['/mimin/route'],],
-                    ['label' => 'Level Akses', 'icon' => 'tasks', 'url' => ['/mimin/role'],],
-                    ['label' => 'Tambah Pengguna', 'icon' => 'user-plus', 'url' => ['/mimin/user/create'],],
-                    ['label' => 'Users', 'icon' => 'user-circle', 'url' => ['/mimin/user'],],
+                    ['label' => 'Route', 'icon' => 'random', 'url' => ['/route'],],
+                    ['label' => 'Level Akses', 'icon' => 'tasks', 'url' => ['/role'],],
+                    ['label' => 'Tambah Pengguna', 'icon' => 'user-plus', 'url' => ['/user/create'],],
+                    ['label' => 'Users', 'icon' => 'user-circle', 'url' => ['/user'],],
                 ],
             ],
             [
@@ -127,7 +127,7 @@ use hscstudio\mimin\components\Mimin;
             ],
         ];
 
-        //$menuItemsfiltered = Mimin::filterMenu($menuItems);
+        $menuItemsfiltered = Mimin::filterMenu($menuItems);
         echo dmstr\widgets\Menu::widget(
                 [
                     'options' => ['class' => 'sidebar-menu tree', 'data-widget' => 'tree'],

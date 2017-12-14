@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use hscstudio\mimin\components\Mimin;
 use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -42,7 +43,12 @@ $this->params['breadcrumbs'][] = $this->title;
 						return "<span class='label label-danger'>" . 'Off' . "</span>";
 				}
 			],
-			['class' => 'yii\grid\ActionColumn'],
+			[
+          'class' => 'yii\grid\ActionColumn',
+          'template' => Mimin::filterActionColumn([
+             'view', 'update','delete'
+          ],$this->context->route),
+                  ]
 		],
 	]); ?>
 

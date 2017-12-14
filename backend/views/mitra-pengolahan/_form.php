@@ -100,10 +100,11 @@ use kartik\date\DatePicker;
                 2 => 'Perempuan'], ['inline' => true]);
             ?>
             <?= $form->field($model, 'tmptlahir')->textInput(['maxlength' => true]); ?>
-            <?php
+            
+                <?php
             echo $form->field($model, 'tgllahir')->widget(DatePicker::classname(), [
                 'type' => DatePicker::TYPE_COMPONENT_APPEND,
-                'options' => ['placeholder' => 'Masukkan tanggal lahir ...'],
+                'options' => ['placeholder' => 'YYYY-MM-DD'],
                 'removeButton' => false,
                 'pluginOptions' => [
                     'format' => 'yyyy-mm-dd',

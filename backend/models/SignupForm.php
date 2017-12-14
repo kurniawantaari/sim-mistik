@@ -17,7 +17,7 @@ class SignupForm extends Model {
     public $satker;
     public $email;
     public $password;
-
+   
     /**
      * @inheritdoc
      */
@@ -69,11 +69,12 @@ class SignupForm extends Model {
      * @return User|null the saved model or null if saving fails
      */
     public function signup() {
-        if (!$this->validate()) {
+        if (!$this->validate(false)) {
             return null;
         }
   
         $user = new User();
+        $user->password='password';
         $user->username = $this->username;
         $user->nama = $this->nama;
         $user->nip_baru = $this->nip_baru;

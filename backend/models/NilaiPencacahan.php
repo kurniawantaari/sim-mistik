@@ -63,7 +63,7 @@ class NilaiPencacahan extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['idmitra', 'idkegiatan', 'sudah_dinilai', 'sudah_dinilai_pengolahan','created_at', 'updated_at', 'created_by', 'updated_by'], 'required'],
+            [['idmitra', 'idkegiatan', 'sudah_dinilai', 'sudah_dinilai_pengolahan'], 'required'],
             [['idmitra', 'idkegiatan', 'konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'persen_error', 'pascakomputerisasi', 'r_nilai'], 'integer'],
             [['sop1', 'sop2', 'sop3', 'sop4', 'sop5', 'sudah_dinilai_pengolahan','sudah_dinilai'], 'boolean'],
             //[['konsep', 'isian', 'tulisan', 'waktu', 'kerjasama', 'koordinasi', 'sop', 'pascakomputerisasi', 'r_nilai'], 'min'=>0, 'max' => 10],

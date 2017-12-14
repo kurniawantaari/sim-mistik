@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use hscstudio\mimin\components\Mimin;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -27,7 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'kdkab',
             'nmkab',
 
-            ['class' => 'yii\grid\ActionColumn'],
+           [
+          'class' => 'yii\grid\ActionColumn',
+          'template' => Mimin::filterActionColumn([
+             'view', 'update','delete'
+          ],$this->context->route),
+                  ]
         ],
    
     ]); ?>

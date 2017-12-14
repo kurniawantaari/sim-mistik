@@ -75,7 +75,7 @@ class MitraPencacahanController extends Controller {
 //            //save the path
 //            $model->foto = $imageLocation;
             $model->save(false);
-        
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -90,15 +90,15 @@ class MitraPencacahanController extends Controller {
      * @param integer $id
      * @return mixed
      */
-   public function actionUpdate($id) {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post())) { //check if new logo has been browsed or not
             if (UploadedFile::getInstance($model, 'file')) {
-        //get the instance of the uploaded file 
+                //get the instance of the uploaded file 
                 $model->file = UploadedFile::getInstance($model, 'file');
                 $imageLocation = 'uploads/' . $model->nik . "." . $model->file->extension;
                 $model->file->saveAs($imageLocation);
-        //save the path to the DB
+                //save the path to the DB
                 $model->foto = $imageLocation;
             }
             $model->save();
@@ -107,7 +107,6 @@ class MitraPencacahanController extends Controller {
             return $this->render('update', ['model' => $model,]);
         }
     }
-
 
     /**
      * Deletes an existing MitraPencacahan model.
@@ -136,6 +135,14 @@ class MitraPencacahanController extends Controller {
         }
     }
 
+    protected function findModelBySlug($nik) {
+        if (($model = MitraPencacahan::findOne(['nik' => $nik])) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException();
+        }
+    }
+
     public function actionKabupaten() {
         $out = [];
         if (isset($_POST['depdrop_parents'])) {
@@ -147,7 +154,7 @@ class MitraPencacahanController extends Controller {
                 foreach ($list as $i => $kab) {
                     $out[] = ['id' => $kab['id'], 'name' => $kab['name']];
                 }
-               
+
                 // Shows how you can preselect a value
                 echo Json::encode(['output' => $out, 'selected' => $selected]);
                 return;
