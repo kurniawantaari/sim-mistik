@@ -16,8 +16,7 @@ li#no-mark::before {
 }
 .breadcrumb {
     background-color: #c4ffe4;
- 
-}
+ }
 .my-bg-green{
     background-color: #008749;
 }
@@ -25,7 +24,7 @@ li#no-mark::before {
     color:white;
 }
 .content-wrapper {
-    background-color: white !important;
+    background-color:#f9f9f9 !important;
 }
 td span{
     padding:0px 2px;
