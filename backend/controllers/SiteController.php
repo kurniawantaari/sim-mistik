@@ -10,9 +10,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
 use backend\models\PasswordResetRequestForm;
-use backend\models\ResetPasswordForm;
-use yii\data\ActiveDataProvider;
-
+use backend\models\ResetPasswordForm;use yii\helpers\ArrayHelper;
 /**
  * Site controller
  */
@@ -117,12 +115,22 @@ class SiteController extends Controller {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-
+                 Yii::$app->getSession()->setFlash('success', [
+    'type' => 'success',
+    'icon' => 'fa fa-info',
+    'message' => 'Check your email for further instructions.',
+    'title' => 'Request Reset Password',
+]);
+             
                 return $this->goHome();
             } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
-            }
+                 Yii::$app->getSession()->setFlash('error', [
+    'type' => 'error',
+    'icon' => 'fa fa-info',
+    'message' => 'Sorry, we are unable to reset password for the provided email address.',
+    'title' => 'Request Reset Password',
+]);
+                          }
         }
 
         return $this->render('requestPasswordResetToken', [
@@ -145,9 +153,14 @@ class SiteController extends Controller {
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password saved.');
-
-            return $this->goHome();
+           
+              Yii::$app->getSession()->setFlash('success', [
+    'type' => 'success',
+    'icon' => 'fa fa-info',
+    'message' => 'New Password saved.',
+    'title' => 'Reset Password',
+]);
+                       return $this->goHome();
         }
 
         return $this->render('resetPassword', [

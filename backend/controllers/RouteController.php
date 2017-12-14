@@ -13,8 +13,7 @@ use yii\filters\AccessControl;
 use hscstudio\mimin\components\Configs;
 use yii\helpers\Inflector;
 use yii\helpers\VarDumper;
-use yii\caching\TagDependency;
-use yii\web\Response;
+use yii\caching\TagDependency;use yii\helpers\ArrayHelper;
 
 /**
  * RouteController implements the CRUD actions for Route model.
@@ -145,7 +144,13 @@ class RouteController extends Controller
 				$model->save();
 			}
 		}
-		Yii::$app->session->setFlash('success', 'Route success generate');
+                Yii::$app->getSession()->setFlash('success', [
+    'type' => 'success',
+    'icon' => 'fa fa-users',
+    'message' => 'Route success generate',
+    'title' => 'Generate Route',
+]);
+	//	Yii::$app->session->setFlash('success', 'Route success generate');
 		return $this->redirect(['index']);
 	}
 

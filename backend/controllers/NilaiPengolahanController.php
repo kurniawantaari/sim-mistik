@@ -8,8 +8,7 @@ use backend\models\NilaiPengolahanSearch;
 use backend\models\MitraPengolahan;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use yii\data\ArrayDataProvider;
+use yii\filters\VerbFilter;use yii\helpers\ArrayHelper;
 
 /**
  * NilaiPengolahanController implements the CRUD actions for NilaiPengolahan model.
@@ -88,25 +87,30 @@ class NilaiPengolahanController extends Controller {
                     $model->kecepatan_edit + $model->kesalahan_edit + $model->kecepatan_entri + $model->kesalahan_entri
                     ) / 4);
 
-            
-                //update nilai total dan kategorinya
-                $mitraModel = $this->findMitraModel($idmitra);
-                $mitraModel->nilai = (int)
-                                NilaiPengolahan::find()->where(['idmitra'=>$idmitra])
-                                //->where()
-                                ->average('r_nilai');
 
-                if ($mitraModel->nilai > 8) {
-                    $mitraModel->kategori_nilai = "diprioritaskan";
-                } else
-                if ($mitraModel->nilai >= 6) {
-                    $mitraModel->kategori_nilai = "dipertimbangkan";
-                } else {
-                    $mitraModel->kategori_nilai = "perlu pembinaan";
-                }
-                $model->sudah_dinilai=TRUE;
-              if ($model->save()&&$mitraModel->save()) { 
-                Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
+            //update nilai total dan kategorinya
+            $mitraModel = $this->findMitraModel($idmitra);
+            $mitraModel->nilai = (int)
+                            NilaiPengolahan::find()->where(['idmitra' => $idmitra])
+                            //->where()
+                            ->average('r_nilai');
+
+            if ($mitraModel->nilai > 8) {
+                $mitraModel->kategori_nilai = "diprioritaskan";
+            } else
+            if ($mitraModel->nilai >= 6) {
+                $mitraModel->kategori_nilai = "dipertimbangkan";
+            } else {
+                $mitraModel->kategori_nilai = "perlu pembinaan";
+            }
+            $model->sudah_dinilai = TRUE;
+            if ($model->save() && $mitraModel->save()) {
+                Yii::$app->getSession()->setFlash('success', [
+                    'type' => 'success',
+                    'icon' => 'fa fa-info',
+                    'message' => 'Berhasil menilai mitra.',
+                    'title' => 'Info',
+                ]);
                 return $this->redirect(['index']);
             } else {
                 return $this->render('update', [

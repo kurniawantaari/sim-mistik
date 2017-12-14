@@ -13,11 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section class="">
     <div class="kegiatan-index">
-        <?php
-//        foreach (Yii::$app->session->getAllFlashes() as $key => $message) {
-//            echo '<div class="alert alert-dismissable alert-' . $key . '"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' . $message . '</div>';
-//        }
-        ?>
+     
 
         <h1><?= Html::encode($this->title) ?></h1>
 

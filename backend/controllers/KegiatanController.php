@@ -7,13 +7,11 @@ use backend\models\Kegiatan;
 use backend\models\NilaiPencacahan;
 use backend\models\NilaiPengolahan;
 use backend\models\MitraPencacahan;
-use backend\models\MitraPengolahan;
+use backend\models\MitraPengolahan;use yii\helpers\ArrayHelper;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use kartik\grid\EditableColumnAction;
-use yii\helpers\ArrayHelper;
 
 /**
  * KegiatanController implements the CRUD actions for Kegiatan model.
@@ -129,11 +127,15 @@ class KegiatanController extends Controller {
             'query' => Kegiatan::find(),
         ]);
 
-        \Yii::$app->getSession()->setFlash('success', 'Berhasil menambahkan mitra pencacahan.');
+        Yii::$app->getSession()->setFlash('success', [
+            'type' => 'success',
+            'icon' => 'fa fa-info',
+            'message' => 'Berhasil menambahkan mitra pencacahan.',
+            'title' => 'Mitra Pencacahan',
+        ]);
         return $this->render('index', [
                     'dataProvider' => $dataProvider,
         ]);
-        
     }
 
     /**
@@ -171,7 +173,12 @@ class KegiatanController extends Controller {
             'query' => Kegiatan::find(),
         ]);
 
-        \Yii::$app->getSession()->setFlash('success', 'Berhasil menambahkan mitra pengolahan.');
+        Yii::$app->getSession()->setFlash('success', [
+            'type' => 'success',
+            'icon' => 'fa fa-info',
+            'message' => 'Berhasil menambahkan mitra pengolahan.',
+            'title' => 'Mitra Pengolahan'
+        ]);
         return $this->render('index', [
                     'dataProvider' => $dataProvider,
         ]);
@@ -198,12 +205,18 @@ class KegiatanController extends Controller {
         //jika berhasil tampilkan notif sukses
         MitraPencacahan::updateAll(['sedang_survei' => FALSE], ['in', 'id', $idsPencacahan]);
         MitraPengolahan::updateAll(['sedang_survei' => FALSE], ['in', 'id', $idsPengolahan]);
-        \Yii::$app->getSession()->setFlash('success', 'Kegiatan telah diselesaikan.');
+        Yii::$app->getSession()->setFlash('success', [
+            'type' => 'success',
+            'icon' => 'fa fa-check',
+            'message' => 'Kegiatan telah diselesaikan.',
+            'title' => 'Kegiatan',
+        ]);
 
 
         return $this->redirect(['index']);
     }
-  public function actionKegiatanlanjut($id) {
+
+    public function actionKegiatanlanjut($id) {
 
         //pilih mitra yang mengikuti kegiatan
         //=pilih idmitra where idkegiatan=$id dari tabel nilai pencacahan 
@@ -222,13 +235,17 @@ class KegiatanController extends Controller {
         //jika berhasil tampilkan notif sukses
         MitraPencacahan::updateAll(['sedang_survei' => TRUE], ['in', 'id', $idsPencacahan]);
         MitraPengolahan::updateAll(['sedang_survei' => TRUE], ['in', 'id', $idsPengolahan]);
-       
- \Yii::$app->getSession()->setFlash('success', 'Kegiatan telah dilanjutkan kembali.');
- 
+        Yii::$app->getSession()->setFlash('success', [
+            'type' => 'success',
+            'icon' => 'fa fa-info',
+            'message' => 'Kegiatann telah dilanjutkan kembali.',
+            'title' => 'Kegiatan',
+        ]);
+
 
         return $this->redirect(['index']);
-        
     }
+
     /**
      * Deletes an existing Kegiatan model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
