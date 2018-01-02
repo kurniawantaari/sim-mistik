@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e284505c04efc1a076b93c2b6d10cdc7",
+    "content-hash": "96c6cbe76cda9d34e90d16629dc0adf0",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -84,6 +84,59 @@
                 "MIT"
             ],
             "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "js",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ]
+        },
+        {
+            "name": "bower-asset/bootstrap3-dialog",
+            "version": "v1.35.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
+                "reference": "3dd11d586f78de75356af418907ec6e3b347377c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/3dd11d586f78de75356af418907ec6e3b347377c",
+                "reference": "3dd11d586f78de75356af418907ec6e3b347377c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=3.1.0",
+                "bower-asset/jquery": ">=1.9.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/less/bootstrap-dialog.less",
+                    "dist/css/bootstrap-dialog.min.css",
+                    "dist/js/bootstrap-dialog.min.js"
+                ],
+                "bower-asset-ignore": [
+                    "source",
+                    "spec",
+                    ".bowerrc",
+                    ".gitignore",
+                    ".jshintignore",
+                    ".jshintrc",
+                    "bower.json",
+                    "gruntfile.js",
+                    "package.json",
+                    "README.md"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/",
             "keywords": [
                 "css",
                 "framework",
@@ -183,6 +236,34 @@
                 "javascript",
                 "jquery",
                 "library"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jqueryui.git",
+                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
+                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery-ui.js"
+                ],
+                "bower-asset-ignore": []
+            },
+            "license": [
+                "MIT"
             ]
         },
         {
@@ -349,6 +430,44 @@
                 "yii"
             ],
             "time": "2013-12-10T17:49:58+00:00"
+        },
+        {
+            "name": "components/flag-icon-css",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lipis/flag-icon-css.git",
+                "reference": "b3f81d10556e007c460444ec22489e68520eb79d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/b3f81d10556e007c460444ec22489e68520eb79d",
+                "reference": "b3f81d10556e007c460444ec22489e68520eb79d",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "name": "flag-icon-css",
+                    "files": [
+                        "less/**",
+                        "css/**",
+                        "flags/**"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Panayiotis Lipiridis (Lipis)",
+                    "email": "lipiridis@gmail.com"
+                }
+            ],
+            "description": "CSS for vector based country flags",
+            "time": "2017-11-16T15:46:30+00:00"
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
@@ -600,6 +719,55 @@
             "time": "2017-11-13T13:37:26+00:00"
         },
         {
+            "name": "kartik-v/bootstrap-popover-x",
+            "version": "v1.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/bootstrap-popover-x.git",
+                "reference": "16704c0a6a7d2960b9a35dfc03b54211d642e43c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-popover-x/zipball/16704c0a6a7d2960b9a35dfc03b54211d642e43c",
+                "reference": "16704c0a6a7d2960b9a35dfc03b54211d642e43c",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\plugins\\popover\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Bootstrap Popover Extended - Popover with modal behavior, styling enhancements and more.",
+            "homepage": "https://github.com/kartik-v/bootstrap-popover-x",
+            "keywords": [
+                "bootstrap",
+                "extended",
+                "jquery",
+                "modal",
+                "modal-popover",
+                "popover",
+                "popover-x"
+            ],
+            "time": "2017-09-07T13:05:26+00:00"
+        },
+        {
             "name": "kartik-v/bootstrap-star-rating",
             "version": "4.0.3",
             "source": {
@@ -642,6 +810,50 @@
                 "svg"
             ],
             "time": "2017-11-03T07:22:19+00:00"
+        },
+        {
+            "name": "kartik-v/bootstrap-tabs-x",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/bootstrap-tabs-x.git",
+                "reference": "e85a731d79f030fb7f7742e3e2e0ac828c3233a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-tabs-x/zipball/e85a731d79f030fb7f7742e3e2e0ac828c3233a1",
+                "reference": "e85a731d79f030fb7f7742e3e2e0ac828c3233a1",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\plugins\\tabs\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Extended Bootstrap Tabs with ability to align tabs in multiple ways, add borders, rotated titles, and more.",
+            "homepage": "https://github.com/kartik-v/bootstrap-tabs-x",
+            "keywords": [
+                "bootstrap",
+                "extended",
+                "jquery",
+                "modal",
+                "modal-tabs",
+                "tabs",
+                "tabs-x"
+            ],
+            "time": "2015-06-26T14:48:16+00:00"
         },
         {
             "name": "kartik-v/dependent-dropdown",
@@ -689,6 +901,341 @@
                 "select"
             ],
             "time": "2017-08-01T11:43:55+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-date-range",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-date-range.git",
+                "reference": "70fd9597e24cf6c03004b345cae3c078708b373a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-date-range/zipball/70fd9597e24cf6c03004b345cae3c078708b373a",
+                "reference": "70fd9597e24cf6c03004b345cae3c078708b373a",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\daterange\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An advanced Yii 2 date range picker input for based on bootstrap-daterangepicker plugin.",
+            "homepage": "https://github.com/kartik-v/yii2-date-range",
+            "keywords": [
+                "bootstrap",
+                "bootstrap 3",
+                "date",
+                "date-range",
+                "extension",
+                "range",
+                "time",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-12-08 03:08:09"
+        },
+        {
+            "name": "kartik-v/yii2-detail-view",
+            "version": "v1.7.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-detail-view.git",
+                "reference": "16b7a94d56db8372e3c5e9c5e2dc96f94aa6a91e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/16b7a94d56db8372e3c5e9c5e2dc96f94aa6a91e",
+                "reference": "16b7a94d56db8372e3c5e9c5e2dc96f94aa6a91e",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-dialog": "~1.0",
+                "kartik-v/yii2-helpers": ">=1.3.5",
+                "kartik-v/yii2-krajee-base": "~1.7",
+                "kartik-v/yii2-widget-activeform": "~1.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\detail\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Various enhancements to the Yii 2 Detail View with multi models, ability to edit data, manage Bootstrap 3 styles and more.",
+            "homepage": "https://github.com/kartik-v/yii2-detail-view",
+            "keywords": [
+                "detail",
+                "detail view",
+                "extension",
+                "form",
+                "grid",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-05-05T05:14:12+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-dialog",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-dialog.git",
+                "reference": "ae6de7328251b084de7f1a66bac1f7c6279c9ad1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/ae6de7328251b084de7f1a66bac1f7c6279c9ad1",
+                "reference": "ae6de7328251b084de7f1a66bac1f7c6279c9ad1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap3-dialog": "~1.34",
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\dialog\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An asset bundle for bootstrap3-dialog for Yii 2.0 framework.",
+            "homepage": "https://github.com/kartik-v/yii2-dialog",
+            "keywords": [
+                "alert",
+                "bootstrap",
+                "dialog",
+                "extension",
+                "modal",
+                "yii2"
+            ],
+            "time": "2017-11-06T16:04:54+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-dynagrid",
+            "version": "v1.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-dynagrid.git",
+                "reference": "1e12d8bf411b314018512e067fafd449f683ce38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-dynagrid/zipball/1e12d8bf411b314018512e067fafd449f683ce38",
+                "reference": "1e12d8bf411b314018512e067fafd449f683ce38",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-grid": "~3.1",
+                "kartik-v/yii2-sortable": "~1.2",
+                "kartik-v/yii2-widget-activeform": "~1.4",
+                "kartik-v/yii2-widget-select2": "~2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\dynagrid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Turbo charge the Yii 2 GridView with personalized columns, page size, and themes.",
+            "homepage": "https://github.com/kartik-v/yii2-dynagrid",
+            "keywords": [
+                "columns",
+                "dynamic",
+                "extension",
+                "grid",
+                "hide",
+                "order",
+                "reorder",
+                "show",
+                "sort",
+                "visibility",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-10-23T14:02:31+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-editable",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-editable.git",
+                "reference": "e07d78660e1d74cf831824855c46742d7ff784da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/e07d78660e1d74cf831824855c46742d7ff784da",
+                "reference": "e07d78660e1d74cf831824855c46742d7ff784da",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": "~1.7",
+                "kartik-v/yii2-popover-x": "~1.3"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\editable\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An enhanced editable widget for Yii 2.0 that allows easy editing of displayed data with numerous configuration possibilities.",
+            "homepage": "https://github.com/kartik-v/yii2-editable",
+            "keywords": [
+                "bootstrap",
+                "editable",
+                "input",
+                "jquery",
+                "popover",
+                "popover-x",
+                "widget"
+            ],
+            "time": "2017-06-28 05:11:45"
+        },
+        {
+            "name": "kartik-v/yii2-export",
+            "version": "v1.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-export.git",
+                "reference": "42fd901373f03dd983481b8fb2ce537e6fa0577e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-export/zipball/42fd901373f03dd983481b8fb2ce537e6fa0577e",
+                "reference": "42fd901373f03dd983481b8fb2ce537e6fa0577e",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-dialog": "~1.0",
+                "kartik-v/yii2-dynagrid": ">=1.4.5",
+                "kartik-v/yii2-mpdf": "~1.0",
+                "phpoffice/phpexcel": "~1.8"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\export\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "A library to export server/db data in various formats (e.g. excel, html, pdf, csv etc.)",
+            "homepage": "https://github.com/kartik-v/yii2-export",
+            "keywords": [
+                "OpenXML",
+                "csv",
+                "export",
+                "extension",
+                "html",
+                "json",
+                "pdf",
+                "spreadsheet",
+                "text",
+                "widget",
+                "xls",
+                "xlsx",
+                "yii2"
+            ],
+            "time": "2017-11-19T18:30:55+00:00"
         },
         {
             "name": "kartik-v/yii2-field-range",
@@ -749,6 +1296,59 @@
             "time": "2017-09-06T14:54:49+00:00"
         },
         {
+            "name": "kartik-v/yii2-grid",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-grid.git",
+                "reference": "01a52accfe58eab2444a4085b1d5589a4d6e0f90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/01a52accfe58eab2444a4085b1d5589a4d6e0f90",
+                "reference": "01a52accfe58eab2444a4085b1d5589a4d6e0f90",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-dialog": "~1.0",
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "suggest": {
+                "kartik-v/yii2-mpdf": "For exporting grids to PDF"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\grid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Yii 2 GridView on steroids. Various enhancements and utilities for the Yii 2.0 GridView widget.",
+            "homepage": "https://github.com/kartik-v/yii2-grid",
+            "keywords": [
+                "extension",
+                "grid",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-12-08 03:15:18"
+        },
+        {
             "name": "kartik-v/yii2-helpers",
             "version": "v1.3.6",
             "source": {
@@ -800,6 +1400,59 @@
             "time": "2016-11-26T06:03:52+00:00"
         },
         {
+            "name": "kartik-v/yii2-icons",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-icons.git",
+                "reference": "84a1da9a9b6df8728914487b1de5dacaa39b6fde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-icons/zipball/84a1da9a9b6df8728914487b1de5dacaa39b6fde",
+                "reference": "84a1da9a9b6df8728914487b1de5dacaa39b6fde",
+                "shasum": ""
+            },
+            "require": {
+                "components/flag-icon-css": "*",
+                "fortawesome/font-awesome": "*",
+                "kartik-v/yii2-krajee-base": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\icons\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://demos.krajee.com/"
+                }
+            ],
+            "description": "Set of icon frameworks for use in Yii Framework 2.0",
+            "homepage": "https://github.com/kartik-v/yii2-icons",
+            "keywords": [
+                "extension",
+                "font",
+                "icon",
+                "yii",
+                "yii2"
+            ],
+            "time": "2017-11-10 17:00:48"
+        },
+        {
             "name": "kartik-v/yii2-krajee-base",
             "version": "v1.8.9",
             "source": {
@@ -849,6 +1502,206 @@
                 "yii2"
             ],
             "time": "2017-09-29T06:18:14+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-mpdf",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-mpdf.git",
+                "reference": "67980ab7861ae9541b1a1784be8938dbeba13045"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/67980ab7861ae9541b1a1784be8938dbeba13045",
+                "reference": "67980ab7861ae9541b1a1784be8938dbeba13045",
+                "shasum": ""
+            },
+            "require": {
+                "mpdf/mpdf": "~7.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\mpdf\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "A Yii2 wrapper component for the mPDF library which generates PDF files from UTF-8 encoded HTML.",
+            "homepage": "https://github.com/kartik-v/yii2-mpdf",
+            "keywords": [
+                "component",
+                "extension",
+                "html",
+                "mpdf",
+                "pdf",
+                "utf8",
+                "yii2"
+            ],
+            "time": "2017-07-19T09:51:02+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-popover-x",
+            "version": "v1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-popover-x.git",
+                "reference": "58837d63e65caa41f0c13e671d1e2abeec17887d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/58837d63e65caa41f0c13e671d1e2abeec17887d",
+                "reference": "58837d63e65caa41f0c13e671d1e2abeec17887d",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/bootstrap-popover-x": "~1.4",
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\popover\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An extended bootstrap 3.0 popover widget which combines both the bootstrap popover and modal features and includes various new styling enhancements.",
+            "homepage": "https://github.com/kartik-v/yii2-popover-x",
+            "keywords": [
+                "bootstrap",
+                "extended",
+                "jquery",
+                "modal",
+                "modal-popover",
+                "popover",
+                "popover-x"
+            ],
+            "time": "2017-09-08T04:30:42+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-sortable",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-sortable.git",
+                "reference": "650dfd6876115fbb996eb6eb8f1d5d13ddb69285"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-sortable/zipball/650dfd6876115fbb996eb6eb8f1d5d13ddb69285",
+                "reference": "650dfd6876115fbb996eb6eb8f1d5d13ddb69285",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\sortable\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Create sortable lists and grids using HTML5 drag and drop API for Yii 2.0.",
+            "homepage": "https://github.com/kartik-v/yii2-sortable",
+            "keywords": [
+                "bootstrap",
+                "extension",
+                "jquery",
+                "range",
+                "sortable",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-06-17T17:34:48+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-tabs-x",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-tabs-x.git",
+                "reference": "685eef44354194b36f6892de2f8288bcf12bc321"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-tabs-x/zipball/685eef44354194b36f6892de2f8288bcf12bc321",
+                "reference": "685eef44354194b36f6892de2f8288bcf12bc321",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/bootstrap-tabs-x": "~1.3",
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\tabs\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An extended bootstrap 3.0 tabs widget with ability to align tabs in multiple ways, add borders, rotated titles, and more.",
+            "homepage": "https://github.com/kartik-v/yii2-tabs-x",
+            "keywords": [
+                "bootstrap",
+                "extended",
+                "jquery",
+                "modal",
+                "modal-tabs",
+                "tabs",
+                "tabs-x"
+            ],
+            "time": "2017-05-04T12:30:21+00:00"
         },
         {
             "name": "kartik-v/yii2-widget-activeform",
@@ -1836,62 +2689,223 @@
             "time": "2014-11-09T19:54:17+00:00"
         },
         {
-            "name": "mdmsoft/yii2-admin",
-            "version": "2.8",
+            "name": "mpdf/mpdf",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mdmsoft/yii2-admin.git",
-                "reference": "48298cb2891f728ae93e59f75802607f0ed910f5"
+                "url": "https://github.com/mpdf/mpdf.git",
+                "reference": "78e5899101203d9ef5e63316e4748aac1c8c2ec1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/48298cb2891f728ae93e59f75802607f0ed910f5",
-                "reference": "48298cb2891f728ae93e59f75802607f0ed910f5",
+                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/78e5899101203d9ef5e63316e4748aac1c8c2ec1",
+                "reference": "78e5899101203d9ef5e63316e4748aac1c8c2ec1",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": "~2.0.7"
+                "ext-gd": "*",
+                "ext-mbstring": "*",
+                "paragonie/random_compat": "^1.4|^2.0",
+                "php": "^5.6 || ~7.0.0 || ~7.1.0 || ~7.2.0",
+                "psr/log": "^1.0",
+                "setasign/fpdi": "1.6.*"
             },
             "require-dev": {
-                "yiisoft/yii2-codeception": "~2.0"
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.0",
+                "squizlabs/php_codesniffer": "^2.7.0",
+                "tracy/tracy": "^2.4"
             },
             "suggest": {
-                "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
+                "ext-bcmath": "Needed for generation of some types of barcodes",
+                "ext-xml": "Needed mainly for SVG manipulation",
+                "ext-zlib": "Needed for compression of embedded resources, such as fonts"
             },
-            "type": "yii2-extension",
+            "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-1.0.master": "1.0.x-dev",
-                    "dev-master": "2.x-dev"
-                },
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
+                    "dev-development": "7.0-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "mdm\\admin\\": ""
+                    "Mpdf\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "GPL-2.0"
             ],
             "authors": [
                 {
-                    "name": "Misbahul Munir",
-                    "email": "misbahuldmunir@gmail.com"
+                    "name": "Matěj Humpál",
+                    "role": "Developer, maintainer"
+                },
+                {
+                    "name": "Ian Back",
+                    "role": "Developer (retired)"
                 }
             ],
-            "description": "RBAC Auth manager for Yii2 ",
+            "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support",
+            "homepage": "https://mpdf.github.io",
             "keywords": [
-                "admin",
-                "auth",
-                "rbac",
-                "yii"
+                "pdf",
+                "php",
+                "utf-8"
             ],
-            "time": "2017-10-04T02:54:53+00:00"
+            "time": "2017-11-22T20:21:45+00:00"
+        },
+        {
+            "name": "paragonie/random_compat",
+            "version": "v2.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/5da4d3c796c275c55f057af5a643ae297d96b4d8",
+                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "pseudorandom",
+                "random"
+            ],
+            "time": "2017-09-27T21:40:39+00:00"
+        },
+        {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2015-05-01T07:00:55+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
@@ -1944,6 +2958,55 @@
                 "yii"
             ],
             "time": "2017-01-11T14:05:47+00:00"
+        },
+        {
+            "name": "setasign/fpdi",
+            "version": "1.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setasign/FPDI.git",
+                "reference": "a6ad58897a6d97cc2d2cd2adaeda343b25a368ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setasign/FPDI/zipball/a6ad58897a6d97cc2d2cd2adaeda343b25a368ea",
+                "reference": "a6ad58897a6d97cc2d2cd2adaeda343b25a368ea",
+                "shasum": ""
+            },
+            "suggest": {
+                "setasign/fpdf": "FPDI will extend this class but as it is also possible to use \"tecnickcom/tcpdf\" as an alternative there's no fixed dependency configured.",
+                "setasign/fpdi-fpdf": "Use this package to automatically evaluate dependencies to FPDF.",
+                "setasign/fpdi-tcpdf": "Use this package to automatically evaluate dependencies to TCPDF."
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "filters/",
+                    "fpdi.php",
+                    "fpdf_tpl.php",
+                    "fpdi_pdf_parser.php",
+                    "pdf_context.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Slabon",
+                    "email": "jan.slabon@setasign.com",
+                    "homepage": "https://www.setasign.com"
+                }
+            ],
+            "description": "FPDI is a collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF. Because it is also possible to use FPDI with TCPDF, there are no fixed dependencies defined. Please see suggestions for packages which evaluates the dependencies automatically.",
+            "homepage": "https://www.setasign.com/fpdi",
+            "keywords": [
+                "fpdf",
+                "fpdi",
+                "pdf"
+            ],
+            "time": "2017-05-11T14:25:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2196,6 +3259,52 @@
             "time": "2016-12-20T13:26:02+00:00"
         },
         {
+            "name": "yiisoft/yii2-jui",
+            "version": "2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-jui.git",
+                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
+                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery-ui": "~1.12.1",
+                "yiisoft/yii2": "~2.0.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\jui\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                }
+            ],
+            "description": "The Jquery UI extension for the Yii framework",
+            "keywords": [
+                "jQuery UI",
+                "yii2"
+            ],
+            "time": "2017-11-25T15:32:29+00:00"
+        },
+        {
             "name": "yiisoft/yii2-swiftmailer",
             "version": "2.0.7",
             "source": {
@@ -2307,87 +3416,6 @@
             "time": "2016-10-30T11:50:56+00:00"
         },
         {
-            "name": "bower-asset/bootstrap3-dialog",
-            "version": "v1.35.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
-                "reference": "3dd11d586f78de75356af418907ec6e3b347377c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/3dd11d586f78de75356af418907ec6e3b347377c",
-                "reference": "3dd11d586f78de75356af418907ec6e3b347377c",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/bootstrap": ">=3.1.0",
-                "bower-asset/jquery": ">=1.9.0"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "dist/less/bootstrap-dialog.less",
-                    "dist/css/bootstrap-dialog.min.css",
-                    "dist/js/bootstrap-dialog.min.js"
-                ],
-                "bower-asset-ignore": [
-                    "source",
-                    "spec",
-                    ".bowerrc",
-                    ".gitignore",
-                    ".jshintignore",
-                    ".jshintrc",
-                    "bower.json",
-                    "gruntfile.js",
-                    "package.json",
-                    "README.md"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/",
-            "keywords": [
-                "css",
-                "framework",
-                "front-end",
-                "js",
-                "less",
-                "mobile-first",
-                "responsive",
-                "web"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery-ui",
-            "version": "1.12.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jqueryui.git",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
-                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.6"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "jquery-ui.js"
-                ],
-                "bower-asset-ignore": []
-            },
-            "license": [
-                "MIT"
-            ]
-        },
-        {
             "name": "bower-asset/typeahead.js",
             "version": "v0.11.1",
             "source": {
@@ -2416,16 +3444,16 @@
         },
         {
             "name": "codeception/base",
-            "version": "2.3.6",
+            "version": "2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/base.git",
-                "reference": "5aeb2bc02819c89fa1538c2a413e245a421dbcf4"
+                "reference": "c3fcea61525e62361ecc45aea1837f225ba73b4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/base/zipball/5aeb2bc02819c89fa1538c2a413e245a421dbcf4",
-                "reference": "5aeb2bc02819c89fa1538c2a413e245a421dbcf4",
+                "url": "https://api.github.com/repos/Codeception/base/zipball/c3fcea61525e62361ecc45aea1837f225ba73b4f",
+                "reference": "c3fcea61525e62361ecc45aea1837f225ba73b4f",
                 "shasum": ""
             },
             "require": {
@@ -2435,18 +3463,17 @@
                 "guzzlehttp/psr7": "~1.0",
                 "php": ">=5.4.0 <8.0",
                 "phpunit/php-code-coverage": ">=2.2.4 <6.0",
-                "phpunit/phpunit": ">4.8.20 <7.0",
+                "phpunit/phpunit": ">=4.8.28 <5.0.0 || >=5.6.3 <7.0",
                 "phpunit/phpunit-mock-objects": ">2.3 <5.0",
                 "sebastian/comparator": ">1.1 <3.0",
                 "sebastian/diff": ">=1.4 <3.0",
-                "stecman/symfony-console-completion": "^0.7.0",
-                "symfony/browser-kit": ">=2.7 <4.0",
-                "symfony/console": ">=2.7 <4.0",
-                "symfony/css-selector": ">=2.7 <4.0",
-                "symfony/dom-crawler": ">=2.7.5 <4.0",
-                "symfony/event-dispatcher": ">=2.7 <4.0",
-                "symfony/finder": ">=2.7 <4.0",
-                "symfony/yaml": ">=2.7 <4.0"
+                "symfony/browser-kit": ">=2.7 <5.0",
+                "symfony/console": ">=2.7 <5.0",
+                "symfony/css-selector": ">=2.7 <5.0",
+                "symfony/dom-crawler": ">=2.7 <5.0",
+                "symfony/event-dispatcher": ">=2.7 <5.0",
+                "symfony/finder": ">=2.7 <5.0",
+                "symfony/yaml": ">=2.7 <5.0"
             },
             "require-dev": {
                 "codeception/specify": "~0.3",
@@ -2459,16 +3486,19 @@
                 "php-amqplib/php-amqplib": "~2.4",
                 "predis/predis": "^1.0",
                 "squizlabs/php_codesniffer": "~2.0",
-                "symfony/process": ">=2.7 <4.0",
+                "symfony/process": ">=2.7 <5.0",
                 "vlucas/phpdotenv": "^2.4.0"
             },
             "suggest": {
+                "aws/aws-sdk-php": "For using AWS Auth in REST module and Queue module",
+                "codeception/phpbuiltinserver": "Start and stop PHP built-in web server for your tests",
                 "codeception/specify": "BDD-style code blocks",
                 "codeception/verify": "BDD-style assertions",
                 "flow/jsonpath": "For using JSONPath in REST module",
                 "league/factory-muffin": "For DataFactory module",
                 "league/factory-muffin-faker": "For Faker support in DataFactory module",
                 "phpseclib/phpseclib": "for SFTP option in FTP Module",
+                "stecman/symfony-console-completion": "For BASH autocompletion",
                 "symfony/phpunit-bridge": "For phpunit-bridge support"
             },
             "bin": [
@@ -2504,7 +3534,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2017-09-29T00:03:44+00:00"
+            "time": "2017-12-12T04:54:15+00:00"
         },
         {
             "name": "codeception/verify",
@@ -2541,44 +3571,6 @@
             ],
             "description": "BDD assertion library for PHPUnit",
             "time": "2017-01-09T10:58:51+00:00"
-        },
-        {
-            "name": "components/flag-icon-css",
-            "version": "2.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lipis/flag-icon-css.git",
-                "reference": "b3f81d10556e007c460444ec22489e68520eb79d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/b3f81d10556e007c460444ec22489e68520eb79d",
-                "reference": "b3f81d10556e007c460444ec22489e68520eb79d",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "name": "flag-icon-css",
-                    "files": [
-                        "less/**",
-                        "css/**",
-                        "flags/**"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Panayiotis Lipiridis (Lipis)",
-                    "email": "lipiridis@gmail.com"
-                }
-            ],
-            "description": "CSS for vector based country flags",
-            "time": "2017-11-16T15:46:30+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -2750,789 +3742,62 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
-            "name": "kartik-v/bootstrap-popover-x",
-            "version": "v1.4.4",
+            "name": "mdmsoft/yii2-admin",
+            "version": "2.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kartik-v/bootstrap-popover-x.git",
-                "reference": "16704c0a6a7d2960b9a35dfc03b54211d642e43c"
+                "url": "https://github.com/mdmsoft/yii2-admin.git",
+                "reference": "48298cb2891f728ae93e59f75802607f0ed910f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-popover-x/zipball/16704c0a6a7d2960b9a35dfc03b54211d642e43c",
-                "reference": "16704c0a6a7d2960b9a35dfc03b54211d642e43c",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\plugins\\popover\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD 3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Bootstrap Popover Extended - Popover with modal behavior, styling enhancements and more.",
-            "homepage": "https://github.com/kartik-v/bootstrap-popover-x",
-            "keywords": [
-                "bootstrap",
-                "extended",
-                "jquery",
-                "modal",
-                "modal-popover",
-                "popover",
-                "popover-x"
-            ],
-            "time": "2017-09-07T13:05:26+00:00"
-        },
-        {
-            "name": "kartik-v/bootstrap-tabs-x",
-            "version": "v1.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/bootstrap-tabs-x.git",
-                "reference": "e85a731d79f030fb7f7742e3e2e0ac828c3233a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-tabs-x/zipball/e85a731d79f030fb7f7742e3e2e0ac828c3233a1",
-                "reference": "e85a731d79f030fb7f7742e3e2e0ac828c3233a1",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "kartik\\plugins\\tabs\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Extended Bootstrap Tabs with ability to align tabs in multiple ways, add borders, rotated titles, and more.",
-            "homepage": "https://github.com/kartik-v/bootstrap-tabs-x",
-            "keywords": [
-                "bootstrap",
-                "extended",
-                "jquery",
-                "modal",
-                "modal-tabs",
-                "tabs",
-                "tabs-x"
-            ],
-            "time": "2015-06-26T14:48:16+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-date-range",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-date-range.git",
-                "reference": "908e8175f3f8c091d425bcaba6e18871d63291a0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-date-range/zipball/908e8175f3f8c091d425bcaba6e18871d63291a0",
-                "reference": "908e8175f3f8c091d425bcaba6e18871d63291a0",
+                "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/48298cb2891f728ae93e59f75802607f0ed910f5",
+                "reference": "48298cb2891f728ae93e59f75802607f0ed910f5",
                 "shasum": ""
             },
             "require": {
-                "kartik-v/yii2-krajee-base": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\daterange\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "An advanced Yii 2 date range picker input for based on bootstrap-daterangepicker plugin.",
-            "homepage": "https://github.com/kartik-v/yii2-date-range",
-            "keywords": [
-                "bootstrap",
-                "bootstrap 3",
-                "date",
-                "date-range",
-                "extension",
-                "range",
-                "time",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-08-08 04:26:22"
-        },
-        {
-            "name": "kartik-v/yii2-detail-view",
-            "version": "v1.7.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-detail-view.git",
-                "reference": "16b7a94d56db8372e3c5e9c5e2dc96f94aa6a91e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-detail-view/zipball/16b7a94d56db8372e3c5e9c5e2dc96f94aa6a91e",
-                "reference": "16b7a94d56db8372e3c5e9c5e2dc96f94aa6a91e",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-dialog": "~1.0",
-                "kartik-v/yii2-helpers": ">=1.3.5",
-                "kartik-v/yii2-krajee-base": "~1.7",
-                "kartik-v/yii2-widget-activeform": "~1.4"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\detail\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Various enhancements to the Yii 2 Detail View with multi models, ability to edit data, manage Bootstrap 3 styles and more.",
-            "homepage": "https://github.com/kartik-v/yii2-detail-view",
-            "keywords": [
-                "detail",
-                "detail view",
-                "extension",
-                "form",
-                "grid",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-05-05T05:14:12+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-dialog",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-dialog.git",
-                "reference": "ae6de7328251b084de7f1a66bac1f7c6279c9ad1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/ae6de7328251b084de7f1a66bac1f7c6279c9ad1",
-                "reference": "ae6de7328251b084de7f1a66bac1f7c6279c9ad1",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/bootstrap3-dialog": "~1.34",
-                "kartik-v/yii2-krajee-base": "~1.7"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\dialog\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "An asset bundle for bootstrap3-dialog for Yii 2.0 framework.",
-            "homepage": "https://github.com/kartik-v/yii2-dialog",
-            "keywords": [
-                "alert",
-                "bootstrap",
-                "dialog",
-                "extension",
-                "modal",
-                "yii2"
-            ],
-            "time": "2017-11-06T16:04:54+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-dynagrid",
-            "version": "v1.4.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-dynagrid.git",
-                "reference": "1e12d8bf411b314018512e067fafd449f683ce38"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-dynagrid/zipball/1e12d8bf411b314018512e067fafd449f683ce38",
-                "reference": "1e12d8bf411b314018512e067fafd449f683ce38",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-grid": "~3.1",
-                "kartik-v/yii2-sortable": "~1.2",
-                "kartik-v/yii2-widget-activeform": "~1.4",
-                "kartik-v/yii2-widget-select2": "~2.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\dynagrid\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Turbo charge the Yii 2 GridView with personalized columns, page size, and themes.",
-            "homepage": "https://github.com/kartik-v/yii2-dynagrid",
-            "keywords": [
-                "columns",
-                "dynamic",
-                "extension",
-                "grid",
-                "hide",
-                "order",
-                "reorder",
-                "show",
-                "sort",
-                "visibility",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-10-23T14:02:31+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-editable",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-editable.git",
-                "reference": "e07d78660e1d74cf831824855c46742d7ff784da"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/e07d78660e1d74cf831824855c46742d7ff784da",
-                "reference": "e07d78660e1d74cf831824855c46742d7ff784da",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-krajee-base": "~1.7",
-                "kartik-v/yii2-popover-x": "~1.3"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\editable\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "An enhanced editable widget for Yii 2.0 that allows easy editing of displayed data with numerous configuration possibilities.",
-            "homepage": "https://github.com/kartik-v/yii2-editable",
-            "keywords": [
-                "bootstrap",
-                "editable",
-                "input",
-                "jquery",
-                "popover",
-                "popover-x",
-                "widget"
-            ],
-            "time": "2017-06-28 05:11:45"
-        },
-        {
-            "name": "kartik-v/yii2-export",
-            "version": "v1.2.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-export.git",
-                "reference": "42fd901373f03dd983481b8fb2ce537e6fa0577e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-export/zipball/42fd901373f03dd983481b8fb2ce537e6fa0577e",
-                "reference": "42fd901373f03dd983481b8fb2ce537e6fa0577e",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-dialog": "~1.0",
-                "kartik-v/yii2-dynagrid": ">=1.4.5",
-                "kartik-v/yii2-mpdf": "~1.0",
-                "phpoffice/phpexcel": "~1.8"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\export\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "A library to export server/db data in various formats (e.g. excel, html, pdf, csv etc.)",
-            "homepage": "https://github.com/kartik-v/yii2-export",
-            "keywords": [
-                "OpenXML",
-                "csv",
-                "export",
-                "extension",
-                "html",
-                "json",
-                "pdf",
-                "spreadsheet",
-                "text",
-                "widget",
-                "xls",
-                "xlsx",
-                "yii2"
-            ],
-            "time": "2017-11-19T18:30:55+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-grid",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "c8f4339c9fd2024d442a5f6fe188fea8ee736232"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/c8f4339c9fd2024d442a5f6fe188fea8ee736232",
-                "reference": "c8f4339c9fd2024d442a5f6fe188fea8ee736232",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-dialog": "~1.0",
-                "kartik-v/yii2-krajee-base": "~1.7"
-            },
-            "suggest": {
-                "kartik-v/yii2-mpdf": "For exporting grids to PDF"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\grid\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Yii 2 GridView on steroids. Various enhancements and utilities for the Yii 2.0 GridView widget.",
-            "homepage": "https://github.com/kartik-v/yii2-grid",
-            "keywords": [
-                "extension",
-                "grid",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-11-24T04:55:57+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-icons",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-icons.git",
-                "reference": "84a1da9a9b6df8728914487b1de5dacaa39b6fde"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-icons/zipball/84a1da9a9b6df8728914487b1de5dacaa39b6fde",
-                "reference": "84a1da9a9b6df8728914487b1de5dacaa39b6fde",
-                "shasum": ""
-            },
-            "require": {
-                "components/flag-icon-css": "*",
-                "fortawesome/font-awesome": "*",
-                "kartik-v/yii2-krajee-base": "*",
-                "yiisoft/yii2-jui": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\icons\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD 3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://demos.krajee.com/"
-                }
-            ],
-            "description": "Set of icon frameworks for use in Yii Framework 2.0",
-            "homepage": "https://github.com/kartik-v/yii2-icons",
-            "keywords": [
-                "extension",
-                "font",
-                "icon",
-                "yii",
-                "yii2"
-            ],
-            "time": "2017-11-10T17:00:48+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-mpdf",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-mpdf.git",
-                "reference": "17fda1cb084c58fee6014026d35af5faf73316ef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/17fda1cb084c58fee6014026d35af5faf73316ef",
-                "reference": "17fda1cb084c58fee6014026d35af5faf73316ef",
-                "shasum": ""
-            },
-            "require": {
-                "mpdf/mpdf": "<7.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\mpdf\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD 3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "A Yii2 wrapper component for the mPDF library which generates PDF files from UTF-8 encoded HTML.",
-            "homepage": "https://github.com/kartik-v/yii2-mpdf",
-            "keywords": [
-                "component",
-                "extension",
-                "html",
-                "mpdf",
-                "pdf",
-                "utf8",
-                "yii2"
-            ],
-            "time": "2017-01-14T11:51:12+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-popover-x",
-            "version": "v1.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-popover-x.git",
-                "reference": "58837d63e65caa41f0c13e671d1e2abeec17887d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/58837d63e65caa41f0c13e671d1e2abeec17887d",
-                "reference": "58837d63e65caa41f0c13e671d1e2abeec17887d",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/bootstrap-popover-x": "~1.4",
-                "kartik-v/yii2-krajee-base": "~1.7"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "kartik\\popover\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "An extended bootstrap 3.0 popover widget which combines both the bootstrap popover and modal features and includes various new styling enhancements.",
-            "homepage": "https://github.com/kartik-v/yii2-popover-x",
-            "keywords": [
-                "bootstrap",
-                "extended",
-                "jquery",
-                "modal",
-                "modal-popover",
-                "popover",
-                "popover-x"
-            ],
-            "time": "2017-09-08T04:30:42+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-sortable",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-sortable.git",
-                "reference": "650dfd6876115fbb996eb6eb8f1d5d13ddb69285"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-sortable/zipball/650dfd6876115fbb996eb6eb8f1d5d13ddb69285",
-                "reference": "650dfd6876115fbb996eb6eb8f1d5d13ddb69285",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-krajee-base": "~1.7"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "kartik\\sortable\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Create sortable lists and grids using HTML5 drag and drop API for Yii 2.0.",
-            "homepage": "https://github.com/kartik-v/yii2-sortable",
-            "keywords": [
-                "bootstrap",
-                "extension",
-                "jquery",
-                "range",
-                "sortable",
-                "widget",
-                "yii2"
-            ],
-            "time": "2015-06-17T17:34:48+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-tabs-x",
-            "version": "v1.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-tabs-x.git",
-                "reference": "685eef44354194b36f6892de2f8288bcf12bc321"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-tabs-x/zipball/685eef44354194b36f6892de2f8288bcf12bc321",
-                "reference": "685eef44354194b36f6892de2f8288bcf12bc321",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/bootstrap-tabs-x": "~1.3",
-                "kartik-v/yii2-krajee-base": "~1.7"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\tabs\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "An extended bootstrap 3.0 tabs widget with ability to align tabs in multiple ways, add borders, rotated titles, and more.",
-            "homepage": "https://github.com/kartik-v/yii2-tabs-x",
-            "keywords": [
-                "bootstrap",
-                "extended",
-                "jquery",
-                "modal",
-                "modal-tabs",
-                "tabs",
-                "tabs-x"
-            ],
-            "time": "2017-05-04T12:30:21+00:00"
-        },
-        {
-            "name": "mpdf/mpdf",
-            "version": "v6.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mpdf/mpdf.git",
-                "reference": "e7310ce53b5c11db1f0b781fe0a69066608ac6e2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/e7310ce53b5c11db1f0b781fe0a69066608ac6e2",
-                "reference": "e7310ce53b5c11db1f0b781fe0a69066608ac6e2",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": "^5.4.0 || 7.0.*",
-                "setasign/fpdi": "1.6.*"
+                "yiisoft/yii2": "~2.0.7"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.7"
+                "yiisoft/yii2-codeception": "~2.0"
             },
             "suggest": {
-                "ext-zlib": "Needed for compression of embedded resources, such as fonts"
+                "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
             },
-            "type": "library",
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.master": "1.0.x-dev",
+                    "dev-master": "2.x-dev"
+                },
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
             "autoload": {
-                "classmap": [
-                    "mpdf.php",
-                    "classes"
-                ]
+                "psr-4": {
+                    "mdm\\admin\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
-                    "name": "Ian Back",
-                    "role": "Developer"
+                    "name": "Misbahul Munir",
+                    "email": "misbahuldmunir@gmail.com"
                 }
             ],
-            "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support",
-            "homepage": "http://mpdf.github.io",
+            "description": "RBAC Auth manager for Yii2 ",
             "keywords": [
-                "pdf",
-                "php",
-                "utf-8"
+                "admin",
+                "auth",
+                "rbac",
+                "yii"
             ],
-            "time": "2017-07-09T16:46:12+00:00"
+            "time": "2017-10-04T02:54:53+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -3832,63 +4097,6 @@
                 }
             ],
             "time": "2017-07-14T14:27:02+00:00"
-        },
-        {
-            "name": "phpoffice/phpexcel",
-            "version": "1.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPOffice/PHPExcel.git",
-                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
-                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
-                "shasum": ""
-            },
-            "require": {
-                "ext-xml": "*",
-                "ext-xmlwriter": "*",
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PHPExcel": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL"
-            ],
-            "authors": [
-                {
-                    "name": "Maarten Balliauw",
-                    "homepage": "http://blog.maartenballiauw.be"
-                },
-                {
-                    "name": "Mark Baker"
-                },
-                {
-                    "name": "Franck Lefevre",
-                    "homepage": "http://blog.rootslabs.net"
-                },
-                {
-                    "name": "Erik Tilt"
-                }
-            ],
-            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
-            "homepage": "http://phpexcel.codeplex.com",
-            "keywords": [
-                "OpenXML",
-                "excel",
-                "php",
-                "spreadsheet",
-                "xls",
-                "xlsx"
-            ],
-            "time": "2015-05-01T07:00:55+00:00"
         },
         {
             "name": "phpspec/php-diff",
@@ -4432,53 +4640,6 @@
                 "response"
             ],
             "time": "2016-08-06T14:39:51+00:00"
-        },
-        {
-            "name": "psr/log",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/log.git",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Log\\": "Psr/Log/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for logging libraries",
-            "homepage": "https://github.com/php-fig/log",
-            "keywords": [
-                "log",
-                "psr",
-                "psr-3"
-            ],
-            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5038,100 +5199,6 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
-        },
-        {
-            "name": "setasign/fpdi",
-            "version": "1.6.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Setasign/FPDI.git",
-                "reference": "a6ad58897a6d97cc2d2cd2adaeda343b25a368ea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Setasign/FPDI/zipball/a6ad58897a6d97cc2d2cd2adaeda343b25a368ea",
-                "reference": "a6ad58897a6d97cc2d2cd2adaeda343b25a368ea",
-                "shasum": ""
-            },
-            "suggest": {
-                "setasign/fpdf": "FPDI will extend this class but as it is also possible to use \"tecnickcom/tcpdf\" as an alternative there's no fixed dependency configured.",
-                "setasign/fpdi-fpdf": "Use this package to automatically evaluate dependencies to FPDF.",
-                "setasign/fpdi-tcpdf": "Use this package to automatically evaluate dependencies to TCPDF."
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "filters/",
-                    "fpdi.php",
-                    "fpdf_tpl.php",
-                    "fpdi_pdf_parser.php",
-                    "pdf_context.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jan Slabon",
-                    "email": "jan.slabon@setasign.com",
-                    "homepage": "https://www.setasign.com"
-                }
-            ],
-            "description": "FPDI is a collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF. Because it is also possible to use FPDI with TCPDF, there are no fixed dependencies defined. Please see suggestions for packages which evaluates the dependencies automatically.",
-            "homepage": "https://www.setasign.com/fpdi",
-            "keywords": [
-                "fpdf",
-                "fpdi",
-                "pdf"
-            ],
-            "time": "2017-05-11T14:25:49+00:00"
-        },
-        {
-            "name": "stecman/symfony-console-completion",
-            "version": "0.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stecman/symfony-console-completion.git",
-                "reference": "5461d43e53092b3d3b9dbd9d999f2054730f4bbb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stecman/symfony-console-completion/zipball/5461d43e53092b3d3b9dbd9d999f2054730f4bbb",
-                "reference": "5461d43e53092b3d3b9dbd9d999f2054730f4bbb",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "symfony/console": "~2.3 || ~3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Stecman\\Component\\Symfony\\Console\\BashCompletion\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Stephen Holdaway",
-                    "email": "stephen@stecman.co.nz"
-                }
-            ],
-            "description": "Automatic BASH completion for Symfony Console Component based applications.",
-            "time": "2016-02-24T05:08:54+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -5886,52 +5953,6 @@
                 "yii2"
             ],
             "time": "2016-03-18T14:09:46+00:00"
-        },
-        {
-            "name": "yiisoft/yii2-jui",
-            "version": "2.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-jui.git",
-                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
-                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery-ui": "~1.12.1",
-                "yiisoft/yii2": "~2.0.4"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\jui\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com"
-                }
-            ],
-            "description": "The Jquery UI extension for the Yii framework",
-            "keywords": [
-                "jQuery UI",
-                "yii2"
-            ],
-            "time": "2017-11-25T15:32:29+00:00"
         }
     ],
     "aliases": [],

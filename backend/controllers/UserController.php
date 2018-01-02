@@ -118,11 +118,12 @@ class UserController extends Controller {
      */
     public function actionCreate() {
         $model = new User();
+
         if ($model->load(Yii::$app->request->post())) {
-            $model->setPassword($model->password);
+            $model->setPassword('password');
             $model->generateAuthKey();
 
-            if ($model->save(false)) {
+            if ($model->save()) {
                 Yii::$app->getSession()->setFlash('success', [
                     'type' => 'success',
                     'icon' => 'fa fa-info',
@@ -138,12 +139,12 @@ class UserController extends Controller {
                     'title' => 'Info',
                 ]);
             }
-        }
-
-        return $this->render('create', [
+		
+	      
+    } return $this->render('create', [
                     'model' => $model,
         ]);
-    }
+	}
 
     /**
      * Updates an existing User model.

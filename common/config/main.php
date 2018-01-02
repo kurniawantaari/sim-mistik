@@ -13,8 +13,8 @@ return [
     'modules' => [
         'mimin' => [
             'class' => '\hscstudio\mimin\Module',
-             'viewPath'=>'@app/views',
-            'layoutPath'=>'@app/views/layout',
+            'viewPath' => '@app/views',
+            'layoutPath' => '@app/views/layout',
         ],
         'gridview' => [
             'class' => '\kartik\grid\Module'
@@ -25,16 +25,16 @@ return [
         // 'i18n' => []
         ]
     ],
-        /*
-         * Kalau mau migrasi, di-comment bagian ini.
-         *      */
+    /*
+     * Kalau mau migrasi, di-comment bagian ini.
+     *      */
     'as access' => [
-     'class' => '\hscstudio\mimin\components\AccessControl',
-	 'allowActions' => [
-		// add wildcard allowed action here!
-		'site/login',
-		//'debug/*',
-		//'mimin/*', // only in dev mode
-	],
-],
+        'class' => '\hscstudio\mimin\components\AccessControl',
+        'allowActions' => [
+            // add wildcard allowed action here!
+            'site/login',
+        //'debug/*',
+        //'mimin/*', // only in dev mode
+        ],
+    ],
 ];
