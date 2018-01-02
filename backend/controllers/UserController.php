@@ -127,7 +127,7 @@ class UserController extends Controller {
                 Yii::$app->getSession()->setFlash('success', [
                     'type' => 'success',
                     'icon' => 'fa fa-info',
-                    'message' => 'Berhasil menambahkan pengguna',
+                    'message' => 'Berhasil menambahkan pengguna dengan password: password',
                     'title' => 'Info',
                 ]);
                 $model = new User();
