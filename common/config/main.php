@@ -33,6 +33,8 @@ return [
         'allowActions' => [
             // add wildcard allowed action here!
             'site/login',
+            'site/logout',
+            'site/index',
         //'debug/*',
         //'mimin/*', // only in dev mode
         ],
