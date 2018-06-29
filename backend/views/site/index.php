@@ -7,10 +7,10 @@ $this->title = '';
     <header class="masthead">
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">SIM-MISTIK</h1>
+                <h1 id="homeHeading">SiMITRA</h1>
                 <hr>
                 <p class="text-block-primary white-text">Rekomendasi Mitra Sekali Klik</p>
-                <a class="btn btn-teal btn-xl js-scroll-trigger" href="#about">Tentang SIM-MISTIK</a>
+                <a class="btn btn-teal btn-xl js-scroll-trigger" href="#about">Tentang SiMITRA</a>
             </div>
         </div>
     </header>

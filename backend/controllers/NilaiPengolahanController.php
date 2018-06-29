@@ -8,7 +8,8 @@ use backend\models\NilaiPengolahanSearch;
 use backend\models\MitraPengolahan;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;use yii\helpers\ArrayHelper;
+use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * NilaiPengolahanController implements the CRUD actions for NilaiPengolahan model.
@@ -87,11 +88,10 @@ class NilaiPengolahanController extends Controller {
                     $model->kecepatan_edit + $model->kesalahan_edit + $model->kecepatan_entri + $model->kesalahan_entri
                     ) / 4);
 
-
+            $model->save();
             //update nilai total dan kategorinya
             $mitraModel = $this->findMitraModel($idmitra);
-            $mitraModel->nilai = (int)
-                            NilaiPengolahan::find()->where(['idmitra' => $idmitra])
+            $mitraModel->nilai = (int) NilaiPengolahan::find()->where(['idmitra' => $idmitra])
                             //->where()
                             ->average('r_nilai');
 

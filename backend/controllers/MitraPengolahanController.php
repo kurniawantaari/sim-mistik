@@ -11,6 +11,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Json;
 use yii\web\UploadedFile;
+use common\models\User;
+use yii\db\Query;
 
 /**
  * MitraPengolahanController implements the CRUD actions for MitraPengolahan model.
@@ -36,8 +38,18 @@ class MitraPengolahanController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
         $dataProvider = new ActiveDataProvider([
-            'query' => MitraPengolahan::find(),
+            'query' => MitraPengolahan::find()
+                    ->where(['kdprov' => (string) $userProv])
+                    ->andWhere(['kdkab' => $userKab])
+                             ,
         ]);
 
         return $this->render('index', [

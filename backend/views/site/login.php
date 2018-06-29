@@ -21,7 +21,7 @@ $fieldOptions2 = [
 
 <div class="login-box">
     <div class="login-logo">
-       SIM-MISTIK
+       SiMITRA
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

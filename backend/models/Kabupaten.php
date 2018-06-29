@@ -53,4 +53,15 @@ class Kabupaten extends \yii\db\ActiveRecord
     {
         return new KabupatenQuery(get_called_class());
     }
+    
+    public static function getKabupaten($kdprov) {
+        $data = Kabupaten::find()
+                ->select('kdkab')
+                ->where(['kdprov' => $kdprov])
+              //  ->asArray()
+                ->all();
+
+        return $data;
+    }
+    
 }

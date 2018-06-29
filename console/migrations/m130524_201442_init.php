@@ -25,6 +25,9 @@ class m130524_201442_init extends Migration
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'prov'=>$this->char(2),
+            'kab'=>$this->char(2),
+            
         ], $tableOptions);
     }
 

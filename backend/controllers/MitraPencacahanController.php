@@ -37,10 +37,19 @@ class MitraPencacahanController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
+           $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
         $dataProvider = new ActiveDataProvider([
-            'query' => MitraPencacahan::find(),
+            'query' => MitraPencacahan::find()
+                    ->where(['kdprov' => (string) $userProv])
+                    ->andWhere(['kdkab' => $userKab])
+                             ,
         ]);
-
         return $this->render('index', [
                     'dataProvider' => $dataProvider,
         ]);

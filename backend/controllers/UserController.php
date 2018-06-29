@@ -13,6 +13,10 @@ use yii\web\Controller;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\ActiveDataProvider;
+use yii\helpers\Json;
+use yii\web\UploadedFile;
+
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -223,6 +227,26 @@ class UserController extends Controller {
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+        public function actionKabupaten() {
+           
+    $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $id = end($_POST['depdrop_parents']);
+            $list = User::getKabupaten($id);
+            $selected = null;
+            if ($id != null && count($list) > 0) {
+                $selected = '';
+                foreach ($list as $i => $kab) {
+                    $out[] = ['id' => $kab['id'], 'name' => $kab['name']];
+                }
+
+                // Shows how you can preselect a value
+                echo Json::encode(['output' => $out, 'selected' => $selected]);
+                return;
+            }
+        }
+        echo Json::encode(['output' => '', 'selected' => '']);
     }
 
 }

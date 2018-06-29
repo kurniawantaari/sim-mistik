@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\NilaiPencacahan;
+use common\models\User;
 
 /**
  * NilaiPencacahanSearch represents the model behind the search form about `backend\models\NilaiPencacahan`.
@@ -42,6 +43,8 @@ class NilaiPencacahanSearch extends NilaiPencacahan
     public function search($params)
     {
         $query = NilaiPencacahan::find();
+        $query->joinWith(['idmitra0']);
+
 
         // add conditions that should always apply here
 
@@ -56,7 +59,13 @@ class NilaiPencacahanSearch extends NilaiPencacahan
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -77,6 +86,8 @@ class NilaiPencacahanSearch extends NilaiPencacahan
             'persen_error' => $this->persen_error,
             'pascakomputerisasi' => $this->pascakomputerisasi,
             'r_nilai' => $this->r_nilai,
+            'kdprov' => (string) $userProv,
+            'kdkab' => $userKab
 //            'sudah_dinilai'=>FALSE,
 //            'sudah_dinilai_pengolahan'=>FALSE,
         ]);

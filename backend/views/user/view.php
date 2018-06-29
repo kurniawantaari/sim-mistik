@@ -38,6 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'username',
                 'nama',
                 'nip_baru',
+                'prov',
+                'kab',
                 'satker',
                 'email:email',
                 [

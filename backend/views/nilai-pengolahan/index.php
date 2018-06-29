@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+//use yii\grid\GridView;
 use hscstudio\mimin\components\Mimin;
 use yii\widgets\Pjax;
 
@@ -43,22 +44,23 @@ $this->params['breadcrumbs'][] = $this->title;
                             return "<span class='label label-success'>" . 'Belum' . "</span>";
                     }
                 ],
-                [
-                    'class' => 'yii\grid\ActionColumn',
-                    'template' => Mimin::filterActionColumn([
-                        'update',
-                            ], $this->context->route),
+                  [
+          'class' => 'yii\grid\ActionColumn',
+          'template' => Mimin::filterActionColumn([
+             'view', 'update'
+          ],$this->context->route),
+                
                 ],
-                'buttons' => [
-                    'update' => function ($url) {
-                        return Html::a(
-                                        '<span class="glyphicon glyphicon-edit"></span>', $url, [
-                                    'title' => 'Beri nilai',
-                                    'data-pjax' => '0',
-                                        ]
-                        );
-                    },
-                ],
+//                'buttons' => [
+//                    'update' => function ($url) {
+//                        return Html::a(
+//                                        '<span class="glyphicon glyphicon-edit"></span>', $url, [
+//                                    'title' => 'Beri nilai',
+//                                    'data-pjax' => '0',
+//                                        ]
+//                        );
+//                    },
+//                ],
             ],
         ]);
 

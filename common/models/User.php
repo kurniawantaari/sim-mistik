@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use backend\models\Kabupaten;
 
 /**
  * This is the model class for table "user".
@@ -21,6 +22,8 @@ use yii\web\IdentityInterface;
  * @property string $satker
  * @property string $auth_key
  * @property string $email
+ * @property string $prov
+ * @property string $kab
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
@@ -31,7 +34,7 @@ use yii\web\IdentityInterface;
 class User extends ActiveRecord implements IdentityInterface {
 
     public $new_password, $old_password, $repeat_password;
-     public $password;
+    public $password;
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
@@ -58,11 +61,12 @@ class User extends ActiveRecord implements IdentityInterface {
     public function rules() {
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, 1,0,self::STATUS_DELETED]],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, 1, 0, self::STATUS_DELETED]],
             [['username', 'password_hash', 'nama', 'nip_baru', 'satker', 'auth_key', 'email'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'nama', 'satker', 'email'], 'string', 'max' => 255],
             [['nip_baru'], 'string', 'min' => 18, 'max' => 18],
+           // [['kab,prov'], 'string', 'max' => 2],
             [['auth_key'], 'string', 'max' => 32],
             [['email'], 'email'],
             [['nip_baru'], 'unique'],
@@ -100,6 +104,8 @@ class User extends ActiveRecord implements IdentityInterface {
             'satker' => Yii::t('app', 'Satker'),
             'auth_key' => Yii::t('app', 'Auth Key'),
             'email' => Yii::t('app', 'Email'),
+            'prov' => Yii::t('app', 'Provinsi'),
+            'kab' => Yii::t('app', 'Kabupaten/Kota'),
             'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
@@ -250,6 +256,24 @@ class User extends ActiveRecord implements IdentityInterface {
         return $this->hasMany(AuthAssignment::className(), [
                     'user_id' => 'id',
         ]);
+    }
+
+    public function getKdkab() {
+        return $this->kab;
+    }
+
+    public function getKdprov() {
+        return $this->prov;
+    }
+
+    public static function getKabupaten($kdprov) {
+        $data = Kabupaten::find()
+                ->select(["concat(kdkab,' - ',nmkab) as name", "kdkab as id"])
+                ->where(['kdprov' => $kdprov])
+                ->asArray()
+                ->all();
+
+        return $data;
     }
 
 }

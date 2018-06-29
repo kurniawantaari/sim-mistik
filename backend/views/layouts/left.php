@@ -47,6 +47,8 @@ use hscstudio\mimin\components\Mimin;
                 'label' => 'Kegiatan',
                 'icon' => 'calendar',
                 'url' => Url::toRoute('/kegiatan/index'),
+                'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">updated</small></span></a>'
+             
             ],
             [
                 'label' => 'Penilaian Kinerja',
@@ -56,6 +58,8 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/nilai-pencacahan'),],
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/nilai-pengolahan'),],
                 ],
+                'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">updated</small></span></a>'
+             
             ],
             ['label' => 'DATA MITRA', 'options' => ['class' => 'header']],
             ['label' => 'Rekomendasi',
@@ -64,6 +68,8 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/mitra/rekomendasi-pencacahan']],
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/mitra/rekomendasi-pengolahan']],
                 ],
+                'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">updated</small></span></a>'
+             
             ],
             ['label' => 'Biodata',
                 'icon' => 'address-card',
@@ -71,6 +77,8 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => ['/mitra/biodata-pencacahan']],
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => ['/mitra/biodata-pengolahan']],
                 ],
+                'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">updated</small></span></a>'
+             
             ],
             ['label' => 'Mitra',
                 'icon' => 'child',
@@ -78,20 +86,20 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Mitra Pencacahan', 'icon' => 'file-text', 'url' => Url::toRoute('/mitra-pencacahan/index')],
                     ['label' => 'Mitra Pengolahan', 'icon' => 'tv', 'url' => Url::toRoute('/mitra-pengolahan/index')],
                 ],
+                'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">updated</small></span></a>'
+             
             ],
             ['label' => 'REKAP', 'options' => ['class' => 'header']],
             [
                 'label' => 'Nilai Mitra',
                 'icon' => 'bar-chart',
                 'url' => Url::toRoute('/rekap/rekap-nilai'),
-                'template' => '<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">baru</small></span></a>'
-            ],
+              ],
             [
                 'label' => 'Mitra - Kegiatan',
                 'icon' => 'chain',
                 'url' => Url::toRoute('/rekap/rekap-mitra_kegiatan'),
-           'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">baru</small></span></a>'
-               
+             
             ],
             ['label' => 'LAIN-LAIN', 'options' => ['class' => 'header']],
             [
@@ -115,6 +123,8 @@ use hscstudio\mimin\components\Mimin;
                     ['label' => 'Tambah Pengguna', 'icon' => 'user-plus', 'url' => ['/user/create'],],
                     ['label' => 'Users', 'icon' => 'user-circle', 'url' => ['/user'],],
                 ],
+                'template'=>'<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">updated</small></span></a>'
+             
             ],
             [
                 'label' => 'Download<sup><i class="fa fa-external-link" style="padding-left:7px;"></i></sup>',

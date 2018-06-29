@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 use yii\helpers\Url;
-Yii::$app->name="SIM-MISTIK";
+Yii::$app->name="SiMitra";
 ?>
 
 <header class="main-header">

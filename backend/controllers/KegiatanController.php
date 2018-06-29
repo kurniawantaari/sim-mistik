@@ -7,11 +7,13 @@ use backend\models\Kegiatan;
 use backend\models\NilaiPencacahan;
 use backend\models\NilaiPengolahan;
 use backend\models\MitraPencacahan;
-use backend\models\MitraPengolahan;use yii\helpers\ArrayHelper;
+use backend\models\MitraPengolahan;
+use yii\helpers\ArrayHelper;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\User;
 
 /**
  * KegiatanController implements the CRUD actions for Kegiatan model.
@@ -96,9 +98,24 @@ class KegiatanController extends Controller {
      * View Mitra Pencacahan that Available to be Assigned to Selected Kegiatan
      */
     public function actionAssignmitrapencacahan($id) {
+        //fungsi untuk memisahkan pengguna provinsi/kabupaten
+
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
+
         $dataProvider = new ActiveDataProvider([
-            'query' => MitraPencacahan::find()->where(['sedang_survei' => false]),
+            'query' => MitraPencacahan::find()
+                    ->where(['kdprov' => (string) $userProv])
+                    ->andWhere(['kdkab' => $userKab])
+                    ->andWhere(['sedang_survei' => false]),
         ]);
+
+
         return $this->render('assignpencacahan', [
                     'dataProvider' => $dataProvider,
                     'idkegiatan' => $id,
@@ -142,8 +159,18 @@ class KegiatanController extends Controller {
      * View Mitra Pengolahan that Available to be Assigned to Selected Kegiatan
      */
     public function actionAssignmitrapengolahan($id) {
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
         $dataProvider = new ActiveDataProvider([
-            'query' => MitraPengolahan::find()->where(['sedang_survei' => false]),
+            'query' => MitraPencacahan::find()
+                    ->where(['kdprov' => (string) $userProv])
+                    ->andWhere(['kdkab' => $userKab])
+                    ->andWhere(['sedang_survei' => false]),
         ]);
         return $this->render('assignpengolahan', [
                     'dataProvider' => $dataProvider,

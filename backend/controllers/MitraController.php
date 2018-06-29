@@ -8,6 +8,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use backend\models\MitraPengolahanSearch;
 use backend\models\MitraPencacahanSearch;
+use common\models\User;
 
 /**
  * Mitra controller
@@ -58,10 +59,22 @@ class MitraController extends Controller {
             ],
         ];
     }
+
     public function actionBiodataPengolahan() {
         //join model pengolahan dan nilai dan kegiatan
         $searchModel = new MitraPengolahanSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
+        $dataProvider->query->where(['kdprov' => (string) $userProv])
+                ->andWhere(['kdkab' => $userKab])
+        ;
 
         return $this->render('biodataPengolahan', [
                     'searchModel' => $searchModel,
@@ -73,7 +86,16 @@ class MitraController extends Controller {
         //join model pengolahan dan nilai dan kegiatan
         $searchModel = new MitraPencacahanSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
+        $dataProvider->query->where(['kdprov' => (string) $userProv])
+                ->andWhere(['kdkab' => $userKab])
+        ;
         return $this->render('biodataPencacahan', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
@@ -88,7 +110,16 @@ class MitraController extends Controller {
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->query->where('nilai >= 6');
         $dataProvider->query->andWhere(['sedang_survei' => false]);
-
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
+        $dataProvider->query->andWhere(['kdprov' => (string) $userProv])
+                ->andWhere(['kdkab' => $userKab])
+        ;
         return $this->render('rekomendasiPengolahan', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
@@ -103,7 +134,16 @@ class MitraController extends Controller {
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->query->where('nilai >= 6');
         $dataProvider->query->andWhere(['sedang_survei' => false]);
-
+        $userId = Yii::$app->user->getId();
+        $user = User::findIdentity($userId);
+        $userProv = $user->getKdprov();
+        $userKab = $user->getKdkab();
+        if ($userKab == 0) {
+            $userKab = \backend\models\Kabupaten::getKabupaten($userProv);
+        }
+        $dataProvider->query->andWhere(['kdprov' => (string) $userProv])
+                ->andWhere(['kdkab' => $userKab])
+        ;
         return $this->render('rekomendasiPencacahan', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,

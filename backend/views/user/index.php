@@ -34,6 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 //   'satker',
                 // 'auth_key',
                 'email:email',
+                'prov',
+                'kab',
                 [
                     'attribute' => 'status',
                     'format' => 'raw',

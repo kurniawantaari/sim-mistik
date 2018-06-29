@@ -6,9 +6,12 @@ use Yii;
 use backend\models\NilaiPencacahan;
 use backend\models\NilaiPencacahanSearch;
 use backend\models\MitraPencacahan;
-use yii\web\Controller;use yii\helpers\ArrayHelper;
+use yii\web\Controller;
+use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\User;
+use yii\helpers\Html;
 
 /**
  * NilaiPencacahanController implements the CRUD actions for NilaiPencacahan model.
@@ -40,8 +43,9 @@ class NilaiPencacahanController extends Controller {
         //jika subject matter pencacahan maka sudah dinilainya saja yang false
         //jika subject matter pengolahan maka sudah dinilai pengolahannya saja yang false
 
-        $dataProvider->query->where(['sudah_dinilai' => false])->orWhere(['sudah_dinilai_pengolahan' => false]);
-
+        $dataProvider->query->where(['sudah_dinilai' => false])
+                ->orWhere(['sudah_dinilai_pengolahan' => false]);
+        
         return $this->render('index', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
@@ -124,13 +128,13 @@ class NilaiPencacahanController extends Controller {
                     $mitraModel->kategori_nilai = "perlu pembinaan";
                 }
                 if ($mitraModel->save()) {
-                     Yii::$app->getSession()->setFlash('success', [
-    'type' => 'success',
-    'icon' => 'fa fa-info',
-    'message' => 'Berhasil menilai mitra',
-    'title' => 'Penilaian Mitra',
-]);
-                   // Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
+                    Yii::$app->getSession()->setFlash('success', [
+                        'type' => 'success',
+                        'icon' => 'fa fa-info',
+                        'message' => 'Berhasil menilai mitra',
+                        'title' => 'Penilaian Mitra',
+                    ]);
+                    // Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
                     return $this->redirect(['index']);
                 } else {
                     return $this->render('nilaipencacahan', [
@@ -139,13 +143,13 @@ class NilaiPencacahanController extends Controller {
                 }
             } else {
                 Yii::$app->getSession()->setFlash('success', [
-    'type' => 'success',
-    'icon' => 'fa fa-info',
-    'message' => 'Berhasil menilai mitra',
-    'title' => 'Info',
-]);
+                    'type' => 'success',
+                    'icon' => 'fa fa-info',
+                    'message' => 'Berhasil menilai mitra',
+                    'title' => 'Info',
+                ]);
                 //Yii::$app->session->setFlash('success', 'Berhasil menilai mitra.');
-                    return $this->redirect(['index']);
+                return $this->redirect(['index']);
             }
         } else {
             return $this->render('nilaipencacahan', [
@@ -190,12 +194,12 @@ class NilaiPencacahanController extends Controller {
                     $mitraModel->kategori_nilai = "perlu pembinaan";
                 }
                 if ($mitraModel->save()) {
-                   Yii::$app->getSession()->setFlash('success', [
-    'type' => 'success',
-    'icon' => 'fa fa-users',
-    'message' => Yii::t(Html::encode('Berhasil menilai mitra')),
-    'title' => Yii::t('app', Html::encode('Info')),
-]);
+                    Yii::$app->getSession()->setFlash('success', [
+                        'type' => 'success',
+                        'icon' => 'fa fa-users',
+                        'message' => Yii::t(Html::encode('Berhasil menilai mitra')),
+                        'title' => Yii::t('app', Html::encode('Info')),
+                    ]);
                     return $this->redirect(['index']);
                 } else {
                     return $this->render('nilaipengolahan', [
@@ -203,13 +207,13 @@ class NilaiPencacahanController extends Controller {
                     ]);
                 }
             } else {
-               Yii::$app->getSession()->setFlash('success', [
-    'type' => 'success',
-    'icon' => 'fa fa-users',
-    'message' => Yii::t(Html::encode('Berhasil menilai mitra')),
-    'title' => Yii::t('app', Html::encode('Info')),
-]);
-                    return $this->redirect(['index']);
+                Yii::$app->getSession()->setFlash('success', [
+                    'type' => 'success',
+                    'icon' => 'fa fa-users',
+                    'message' => Yii::t('app',Html::encode('Berhasil menilai mitra')),
+                    'title' => Yii::t('app', Html::encode('Info')),
+                ]);
+                return $this->redirect(['index']);
             }
         } else {
             return $this->render('nilaipengolahan', [
