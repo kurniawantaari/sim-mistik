@@ -35,6 +35,7 @@ class User extends ActiveRecord implements IdentityInterface {
 
     public $new_password, $old_password, $repeat_password;
     public $password;
+    //public $kab, $prov;
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
@@ -44,6 +45,7 @@ class User extends ActiveRecord implements IdentityInterface {
      */
     public static function tableName() {
         return '{{%user}}';
+       // return 'user';
     }
 
     /**
@@ -66,7 +68,7 @@ class User extends ActiveRecord implements IdentityInterface {
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'nama', 'satker', 'email'], 'string', 'max' => 255],
             [['nip_baru'], 'string', 'min' => 18, 'max' => 18],
-           // [['kab,prov'], 'string', 'max' => 2],
+            [['kab','prov'], 'string'],//, 'max' => 2],
             [['auth_key'], 'string', 'max' => 32],
             [['email'], 'email'],
             [['nip_baru'], 'unique'],
